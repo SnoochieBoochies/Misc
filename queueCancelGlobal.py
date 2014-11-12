@@ -15,7 +15,15 @@ import ast
 from pprint import pprint
 import pycurl
 import cStringIO
+from StringIO import StringIO
 import sys, getopt
+import datetime as dt
+import os
+import os.path
+import csv
+import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
 
 from optparse import OptionParser
 
@@ -62,7 +70,7 @@ def doCancel(job_to_monitor):
                     print jobVal[i]
                     print "Deleting job ", jobKey, " with id ", jobVal[i]
                     #jobVal.pop(i)
-                    cancelBuild(jobVal[i])
+                    #cancelBuild(jobVal[i])
     #one job to rule them all flow
     else:
 
@@ -74,7 +82,13 @@ def doCancel(job_to_monitor):
                 #jobVal.pop(i)
 
                 #print jobMap
-                cancelBuild(jobVal[i])
+                # TODO trying to add job deletion statistics in a graph. Must remember to truncate the
+                # stats file so it doesn't get fricking huge over time.
+                write_stat(dt.datetime.now(), 1)
+                #cancelBuild(jobVal[i])
+
+            # else add a 0 to the stats file indicating we didn't delete anything
+            write_stat(dt.datetime.now(), 0)
 
     return
 
@@ -110,6 +124,21 @@ def cancelBuild(jobId):
     buf.close()
     return
 
+def write_stat(timestamp, deleted):
+    stats_file = open("stats.stats", "a")
+    file_path = os.path.abspath(stats_file.name)
+    file_modified = dt.datetime.fromtimestamp(os.path.getmtime(file_path))
+    # Delete after a week's logging.
+    if dt.datetime.now() - file_modified > dt.timedelta(hours=168):
+        os.remove(file_path)
+
+    csv_writer = csv.writer(stats_file)
+    data = [deleted, timestamp]
+    csv_writer.writerow(data)
+
+    stats_file.close()
+    return
+
 def main(argv):
 
     job_to_monitor = ''
@@ -135,7 +164,11 @@ def main(argv):
     elif options.job_to_monitor == '':
         print "one job to rule them all flow"
         doCancel('')
-
+        #plot our stats and save to png
+        data = np.genfromtxt("stats.stats", delimiter=',', dtype=None)
+        print data
+        plt.plotfile("stats.stats",(0,))
+        plt.savefig('test1.png')
     #print jobMap
 
  

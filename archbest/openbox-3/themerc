@@ -146,11 +146,11 @@ menu.items.disabled.text.color:		#8c8c75
 
 osd
 osd.border.width: 1
-#osd.border.color:  #2d9ac9
-osd.border.color: #FFC0CB
+osd.border.color:  #2d9ac9
+#osd.border.color: #FFC0CB
 
 osd.bg: flat border vertical gradient
-# osd.bg.color: #272c30
+osd.bg.color: #272c30
 #osd.bg.color: #FFC0CB
 osd.bg.colorTo: #272c30
 osd.bg.border.color: #2d9ac9
