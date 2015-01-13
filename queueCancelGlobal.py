@@ -132,7 +132,9 @@ def cancelBuild(jobId):
 
 #write to a file per job.
 def write_stat(jobName, timestamp, deleted):
+    print "write_stat"
     if not os.path.exists(statsDirectory):
+        print "making stat dir"
         os.makedirs(statsDirectory)
 
     stats_file = open(statsDirectory + "/" + jobName + "_stats.stats", "a")
@@ -269,6 +271,7 @@ def main(argv):
         print "Making graph output directory at: ", options.graphOutput
         os.makedirs(options.graphOutput)
 
+	
     if options.master == True and options.job_to_monitor != '':
         print "You must either use the -m flag or the -j flag. Not both."
         sys.exit(1)
@@ -280,6 +283,13 @@ def main(argv):
         doCancel(job_to_monitor)        
     elif options.job_to_monitor == '':
         print "one job to rule them all flow"
+        #Same for the stats dir. This seems only a problem when the job queue is empty on the very first run of this script
+        if not os.path.exists(statsDirectory):
+            print "Making stats directory"
+            os.makedirs(statsDirectory)
+        else:
+            print "stats dir exists"
+
         doCancel('')
         genGraphs(options.graphOutput)
                
