@@ -152,7 +152,7 @@ def write_stat(jobName, timestamp, deleted):
     return
 
 
-def genGraphs():
+def genGraphs(graphOutput):
     for statsFile in os.listdir(statsDirectory):
         print statsFile
         
@@ -165,23 +165,23 @@ def genGraphs():
             #impressions are either 1 or 0, indicating whether a job was killed in that run
             days, impressions = np.loadtxt(filePath,unpack=True,delimiter=",", converters={0: mdates.strpdate2num('%Y-%m-%d')})
             
-            print days
+            #print days
             #print impressions
             #convert numbers to ints so we can sum them up, giving us our maximum on the y-axis
             totalList = [0]
             totalList = totalList + map(int, impressions)
-            print "totalList = ",totalList
+            #print "totalList = ",totalList
             
             #Remove duplicate entries from days list
             daysFinal = list(set(days))
             #print daysFinal
 
             listOfTotalsPerDay = [0]*len(daysFinal)
-            print "listOftotalsPerDay = ", listOfTotalsPerDay
+            #print "listOftotalsPerDay = ", listOfTotalsPerDay
             daysInts = map(int, daysFinal)
-            print "daysInts = ", daysInts
+            #print "daysInts = ", daysInts
             daysOldInts = map(int, days)
-            print "daysOldInts = ",daysOldInts
+            #print "daysOldInts = ",daysOldInts
 
             
             daysOldMap = {}
@@ -195,13 +195,13 @@ def genGraphs():
                 else:
                     daysOldMap[day] = daysOldMap[day] + totalList[counter]
                 counter+=1
-            print "daysOldMap = ", daysOldMap
+            #print "daysOldMap = ", daysOldMap
             
             
             maxY = sum(totalList)
-            print maxY
-            print daysOldMap.keys()
-            print daysOldMap.values()
+            #print maxY
+            #print daysOldMap.keys()
+            #print daysOldMap.values()
 
                    
 
@@ -243,10 +243,11 @@ def genGraphs():
 
             plt.show()
             
-            #Save it.
-            pngName = jobName + ".png"
-            plt.savefig(pngName) 
-            
+            #Save it. Adding the graphOutput for the jenkins job so we can write to the workspace directory
+            pngName = graphOutput + "/" + jobName + ".png"
+            plt.savefig(pngName)
+
+                        
     return
 
 def main(argv):
@@ -255,12 +256,18 @@ def main(argv):
     parser = OptionParser()
     parser.add_option("-m", "--master", action="store_true", dest="master", default=False, help="Assume master control of the Jenkins job queue")
     parser.add_option("-j", "--job", action="store", type="string", dest="job_to_monitor", default='', help="The Job you wish to monitor for")
+    parser.add_option("-o", "--output", action="store", type="string", dest="graphOutput", default='.', help="The output directory of graphs")
 
     (options, args) = parser.parse_args()
 
 	#print options.filename
     #print options.master
     #print options.job_to_monitor
+    
+    #Check the output directory to see if it exists first.
+    if not os.path.exists(options.graphOutput):
+        print "Making graph output directory at: ", options.graphOutput
+        os.makedirs(options.graphOutput)
 
     if options.master == True and options.job_to_monitor != '':
         print "You must either use the -m flag or the -j flag. Not both."
@@ -274,7 +281,7 @@ def main(argv):
     elif options.job_to_monitor == '':
         print "one job to rule them all flow"
         doCancel('')
-        genGraphs()
+        genGraphs(options.graphOutput)
                
  
 if __name__ == "__main__":
