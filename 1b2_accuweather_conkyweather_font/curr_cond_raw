@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <title>Blanchardstown Current Weather - AccuWeather Forecast for Dublin Ireland</title>    
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a690b21e9f","applicationID":"599479","transactionName":"NV0GYUFWCEUDBkNQDAwXIFpHeQNCIQpZTRENVAhQQRggWRAAVFgQFhcnQEFFA1gWJlhXBwtMDVpdRA==","queueTime":0,"applicationTime":246,"ttGuid":"1E28624FA9BC519D","agent":"js-agent.newrelic.com/nr-536.min.js"}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUFVl5UGwYJXVVVDg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(5),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(3),t(4),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:4,2:7,3:6,4:5,5:20,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],4:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:20,2:21,ee:"QJf3ax",gos:"7eSDFh"}],5:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:21,2:20,ee:"QJf3ax"}],6:[function(t,e){function n(t,e,n){var r=t[0];"string"==typeof r&&(r=new Function(r)),t[0]=o(r,"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:21,2:20,ee:"QJf3ax"}],7:[function(t,e){function n(){c.inPlace(this,d,"fn-")}function r(t,e){c.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}var i=t("ee").create(),a=t(1),s=t(2),c=s(i),u=s(a),f=window.XMLHttpRequest,d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=i,window.XMLHttpRequest=function(t){var e=new f(t);try{i.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",function(t,e){return e}),e.addEventListener("readystatechange",n,!1)}catch(r){try{i.emit("internal-error",[r])}catch(o){}}return e},window.XMLHttpRequest.prototype=f.prototype,c.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),i.on("send-xhr-start",r),i.on("open-xhr-start",r)},{1:4,2:21,ee:"QJf3ax"}],8:[function(t){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(n.cat=d.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r,this.startTime])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=e(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",[e])}catch(r){}}};for(var f=0;c>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:9,3:7,4:4,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],9:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],10:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","trackUserAction","finished","traceEvent","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:19,2:20,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.licenseKey&&t.applicationID&&u&&u.body){s(h,function(e,n){e in t||(t[e]=n)}),l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=l.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f="addEventListener",d="attachEvent",p=(""+location).split("?")[0],h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-536.min.js"},l=e.exports={offset:i(),origin:p,features:{}};u[f]?(u[f]("DOMContentLoaded",o,!1),c[f]("load",n,!1)):(u[d]("onreadystatechange",r),c[d]("onload",n)),a("mark",["firstbyte",i()])},{1:19,2:10,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],19:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],20:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],21:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s,t))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:20,ee:"QJf3ax"}]},{},["G9z0Bl",3,8]);</script>
+          
+    <meta name="description" content="Get Blanchardstown, Ireland current weather reports and conditions including temperature, RealFeel and precipitation from AccuWeather.com" />
+<link rel="canonical" href="http://www.accuweather.com/en/ie/blanchardstown/207931/current-weather/207931" />
+<meta name="keywords" content="Blanchardstown Ireland, current weather, weather report" />
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.accuweather.com/en/ie/blanchardstown/207931/current-weather/207931" />
+<link rel="alternate" media="handheld" href="http://m.accuweather.com/en/ie/blanchardstown/207931/current-weather/207931" />
+
+    <meta name="viewport" content="width=988"/>
+    <link rel="stylesheet" href="http://vortex.accuweather.com/adc2010/stylesheets/site.min-20141222.css" type="text/css" media="all" /> 
+
+    <style type="text/css">
+        @media print{#header-davek,#header-links,#header-davek-2,#ad-prestitial-panel,#footer-nav,#offers,div.logo-ad,div.panel-ad-mr,div.ad-lr,#ad-links,#wrap-s .bt,.margusity,.column-2-r,.addthis_toolbox,body#news-news .column-2,body#news-news #news,body#news-news .panel-head-tabs-rt,#extras{display:none}body,#wrap,#wrap-content,.column-1,#panel-main,.strong .panel-body,.strong .panel-body-lt,.strong .panel-body-rt,.strong .panel-foot,.strong .panel-foot-lt,.strong .panel-foot-rt,.strong .panel-head,.strong .panel-head-lt,.strong .panel-head-rt{background:0}.clearfix{position:static;display:block}body#news-news .column-1{width:980px;float:none;}}
+    </style>
+
+    <link rel="shortcut icon" href="http://vortex.accuweather.com/adc2010/images/favicons/awx-2013-master.ico" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <style type="text/css">
+.flag-IE { background-image: url(http://vortex.accuweather.com/adc2010/images/flags/IE.png) !important;}
+.flag-US { background-image: url(http://vortex.accuweather.com/adc2010/images/flags/US.png) !important;}
+.flag-CN { background-image: url(http://vortex.accuweather.com/adc2010/images/flags/CN.png) !important;}
+        .i-3-header {background-image: url(http://vortex.accuweather.com/adc2010/images/header-bg-day/3-header.jpg);}
+         </style> 
+    
+<link rel="stylesheet" href="http://vortex.accuweather.com/adc2010/stylesheets/pages/forecast-extended.min-20111207.css" type="text/css" media="all" /> 
+<style type="text/css">
+.detail-tab-buttons li a span {
+padding: 6px 15px 0 18px;
+}
+</style>
+<style type="text/css">
+.i-3-xl{background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/03-xl.png)} 
+.i-3-l{background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/03-l.png)} .i-36-l{background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/36-l.png)} .i-3-s{background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/03-s.png)} .i-7-s{background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/07-s.png)} .i-4-s{background-image:url(http://vortex.accuweather.com/adc2010/images/icons-numbered/04-s.png)} 
+</style>
+
+
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://vortex.accuweather.com/adc2010/stylesheets/ie6.css" type="text/css" media="all" />
+    <script type="text/javascript" src="http://vortex.accuweather.com/adc2010/javascripts/ie6.js"></script>
+    <![endif]--> 
+    <!--[if lt IE 7]>
+    <script defer type="text/javascript" src="http://vortex.accuweather.com/adc2010/javascripts/ie6_png_fix.js"></script>
+    <![endif]-->
+    <!--[if IE 7]><link rel="stylesheet" href="http://vortex.accuweather.com/adc2010/stylesheets/ie7.min-20130423.css" type="text/css" media="all" /><![endif]--> 
+    <!--[if IE 8]><link rel="stylesheet" href="http://vortex.accuweather.com/adc2010/stylesheets/ie8.min-20130423.css" type="text/css" media="all" /><![endif]--> 
+    <!--[if gte IE 9]><link rel="stylesheet" href="http://vortex.accuweather.com/adc2010/stylesheets/ie9.min-20121129.css" type="text/css" media="all" /><![endif]--> 
+
+    <script type="text/javascript">
+    //define our user bucket settings from config
+    var userLevelSettings = {
+        engagedUserSessionPageViews: 9,
+        ambassadorSessions: 5,
+        engagedAmbassadorTotalPageViews: 18
+        };
+
+    var bingMapsKey = 'Aq63PdcG0ddlLSi7wf0mYGOEp6l2fVZqDjlpBEIMjicZ38F6t9jlRdb1B0Y2tKgE';
+
+    var gaKey = 'UA-20804842-1';
+    </script>
+
+    <script type="text/javascript">
+    var apgUserInfoObj = {
+        country: 'IE',
+        city: 'Blanchardstown',
+        state: 'D',
+        metro: '',
+        zip: '',
+        fcode: 'EILN',
+        partner: 'accuweather',
+        sessionPartner: 'accuweather',
+        referer: '',
+        lang: 'en-us',
+        langid: '1',
+        lat: '53.39',
+        lon: '-6.39',
+        dma: '',
+        ip: '92.51.193.234',
+        ipLocation: 'ie/blanchardstown/207933/',
+        sessionViews: 1,
+    //visitFlow: '',
+    geo_dma: '',
+        geo_city: 'Dundalk',
+    geo_state: 'LH',
+    geo_zip: '',
+    geo_country: 'IE',
+    gmtOffset: '0',
+    locationKey: '207933'
+    };
+
+
+    var apgWxInfoObj = { nwsalrt: '', alerts: { source: '', category: '', typeid: '' }, isday: '1', lfs: { day: '5', category: 'rain', severity: '5' }, hdln: '5', ut: '1', cu: { wx: '3', hi: '7', wd: '', hd: '', uv: '' }, fc: [{ wx: '', hi: '', lo: '' }, { wx: '', hi: '', lo: '' }, { wx: '', hi: '', lo: '' }], ix: {arthritis:'1',asthma:'1',bbq:'1',cold:'1',flu:'',lawnmowing:'1',migraine:'3',outdoor:'2',schoolclosing:'',sinus:'4',soil:'',field:'',beach:'1',biking:'2',concert:'1',construction:'2',composting:'1',dust:'2',fishing:'5',fueleconomy:'3',golf:'2',heart:'5',hiking:'2',hvac:'3',mosq:'1',sailing:'3',running:'2',schoolbus:'4',skiing:'2',star:'1',frizz:'2',pollen:'1',uvindex:'1',hunting:'5', driving:'5', travel:'5', airq:'0', pgrass:'1', pmold:'1', pweed:'1', ptree:'1' } };
+var aadCustomKeyValuePairs = {};
+</script>
+    
+    <script type="text/javascript">
+    var AW_EXP_ID = null;
+    var AW_EXP_VAR = null;
+        var apgConfigObj = {};
+        apgConfigObj.showLifestyle = true;
+        apgConfigObj.prompts = {};
+    apgConfigObj.useBrightcoveVideoWall = true;
+    apgConfigObj.openBrightCoveVideoWallInNewTab = true;
+
+        var acm_RecentLocationsCarousel= new Array();
+
+acm_RecentLocationsCarousel.push({name:"Blanchardstown, Ireland", daypart:'day', href:'/en/ie/blanchardstown/207933/weather-forecast/207933', icon:'http://vortex.accuweather.com/adc2010/images/icons-numbered/03-m.png', bg:'su', temp:'7',  realfeel:'1',  text:'Partly sunny'});
+acm_RecentLocationsCarousel.push({name:"New York, NY", daypart:'day', href:'/en/us/new-york-ny/10017/weather-forecast/349727', icon:'http://vortex.accuweather.com/adc2010/images/icons-numbered/07-m.png', bg:'c', temp:'2',  realfeel:'3',  text:'Cloudy'});
+acm_RecentLocationsCarousel.push({name:"Miami, FL", daypart:'day', href:'/en/us/miami-fl/33128/weather-forecast/347936', icon:'http://vortex.accuweather.com/adc2010/images/icons-numbered/03-m.png', bg:'su', temp:'23',  realfeel:'23',  text:'Partly sunny'});
+acm_RecentLocationsCarousel.push({name:"Los Angeles, CA", daypart:'night', href:'/en/us/los-angeles-ca/90012/weather-forecast/347625', icon:'http://vortex.accuweather.com/adc2010/images/icons-numbered/33-m.png', bg:'cl', temp:'10',  realfeel:'12',  text:'Clear'});
+
+    </script>
+
+            <script type="text/javascript">
+                var acm_InterestLayers = [
+{group:'1.1', name:'Cold & Flu', code:'10302', icon: 'cold-flu', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/cold-flu-weather/207933', alarm:[3,4,5]},
+{group:'1.1', name:'Allergies', code:'10201', icon: 'allergies', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/allergies-weather/207933', alarm:[3,4,5]},
+{group:'1.1', name:'Respiratory', code:'10301', icon: 'respiratory', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/asthma-weather/207933', alarm:[3,4,5]},
+{group:'1.1', name:'Arthritis', code:'10102', icon: 'arthritis', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/arthritis-weather/207933', alarm:[3,4,5]},
+{group:'1.1', name:'Migraine', code:'10101', icon: 'migraine', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/migraine-weather/207933', alarm:[3,4,5]},
+{group:'1.1', name:'Sinus', code:'10103', icon: 'sinus', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/sinus-weather/207933', alarm:[3,4,5]},
+{group:'1.2', name:'Travel', code:'20501', icon: 'travel', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/air-travel-weather/207933', alarm:[1]},
+{group:'1.2', name:'Astronomy', code:'40501', icon: 'astro', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/astronomy-weather/207933', alarm:[1]},
+{group:'1.2', name:'Events', code:'41001', icon: 'events', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/events-weather/207933', alarm:[1]},
+{group:'2.1', name:'Driving', code:'20401', icon: 'driving', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/driving-weather/207933', alarm:[1]},
+{group:'2.1', name:'School Day', code:'30401', icon: 'school', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/school-day-weather/207933', alarm:[1]},
+{group:'2.1', name:'Hair Day', code:'30301', icon: 'hair', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/hair-day-weather/207933', alarm:[3,4,5]},
+{group:'2.1', name:'Snow Days', code:'30402', icon: 'snow', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/snow-day-weather/207933', alarm:[4,5]},
+{group:'2.2', name:'D.I.Y.', code:'30101', icon: 'diy', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/diy-weather/207933', alarm:[1]},
+{group:'2.2', name:'Lawn & Garden', code:'30201', icon: 'lawn-garden', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/lawn-garden-weather/207933', alarm:[1]},
+{group:'2.2', name:'Home Energy', code:'30501', icon: 'home-energy', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/home-energy-weather/207933', alarm:[1]},
+{group:'2.2', name:'Entertaining', code:'40102', icon: 'entertaining', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/outdoor-entertaining-weather/207933', alarm:[1]},
+{group:'3.1', name:'Golf', code:'40201', icon: 'golf', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/golf-weather/207933', alarm:[1]},
+{group:'3.1', name:'Ski', code:'40301', icon: 'ski', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/ski-weather/207933', alarm:[1]},
+{group:'3.1', name:'Hunting', code:'40601', icon: 'hunting', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/hunting-weather/207933', alarm:[1]},
+{group:'3.1', name:'Fishing', code:'40602', icon: 'fishing', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/fishing-weather/207933', alarm:[1]},
+{group:'3.1', name:'Running', code:'40901', icon: 'running', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/running-weather/207933', alarm:[1]},
+{group:'3.1', name:'Hiking', code:'40903', icon: 'hiking', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/hiking-weather/207933', alarm:[1]},
+{group:'3.1', name:'Biking', code:'40902', icon: 'biking', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/biking-weather/207933', alarm:[1]},
+{group:'3.1', name:'Sun & Sand', code:'40401', icon: 'sun-sand', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/sun-sand-weather/207933', alarm:[1]},
+{group:'3.1', name:'Sailing', code:'40402', icon: 'sailing', href:'http://www.accuweather.com/en/ie/blanchardstown/207933/sailing-weather/207933', alarm:[1]}];                        
+            </script>    
+
+    <script type="text/javascript" src="http://vortex.accuweather.com/adc2010/javascripts/lib.min-20141105.js"></script> 
+    
+<script type="text/javascript">
+    var apgPageInfoObj = { ad_site: 'world',
+    section: 'forecast',
+    ad_section: 'forecast',
+    page: 'forecast-current-conditions',
+    ad_page: 'current-conditions',
+    page_code: '',
+    crumb_trail: ['Forecast', 'CurrentConditions', 'IE', "Dublin", "Blanchardstown"],
+    pageType: 'forecast',
+    pageExt: '', adPos: { atf728: true, atfPencil: true, atf300: true, atf160: false, btf728: true, btf300: true, popunder: true, prestitial: true, links: true, ptoSkin: true, tiles: [
+{
+  divid: "header-davek-ps",
+  atf: true,
+  companion: false,
+  name: "Tile1",
+  enabled: true,
+  sizes: {
+    ATF728:true,
+    ATFPENCIL:true
+  }
+},
+{
+  divid: "top-panel-body-rt-body-ps",
+  atf: true,
+  companion: false,
+  name: "Tile2",
+  enabled: true,
+  sizes: {
+    ATF300:true,
+    ATF300_NONPROD:true,
+    ATF160:false
+  }
+},
+{
+  divid: "bottom-panel-body-ps",
+  atf: false,
+  companion: false,
+  name: "Tile3",
+  enabled: true,
+  sizes: {
+    BTF300:true,
+    BTF300_NONPROD:true
+  }
+},
+{
+  divid: "footer-stevem-ps",
+  atf: false,
+  companion: false,
+  name: "Tile4",
+  enabled: true,
+  sizes: {
+    BTF728:true
+  }
+},
+{
+  divid: "aadTop300",
+  atf: true,
+  companion: false,
+  name: "Tile2",
+  enabled: false,
+  sizes: {
+    ATF300:false,
+    ATF300_NONPROD:false,
+    ATF160:true
+  }
+}]
+} };
+
+apgWxInfoObj.cu.wx = '3';apgWxInfoObj.cu.hi = '7';apgWxInfoObj.cu.wd = '22';apgWxInfoObj.cu.hd = '70';apgWxInfoObj.cu.uv = '2';    apgWxInfoObj.fc = [{ wx: '3', hi: '9', lo: '2' },
+    { wx: '7', hi: '10', lo: '5' },
+    { wx: '7', hi: '11', lo: '7' }];
+</script>
+
+
+    <script type="text/javascript">
+        if (apgConfigObj.minutecast) {
+            apgConfigObj.minutecast.contentAmount = '1';
+        }
+    </script>
+
+<script>
+    var acm = {};
+    acm.isOldIE = false;
+</script>    
+<!--[if lte IE 8]>
+    <script>acm.isOldIE = true;</script>
+<![endif]-->
+    <script type="text/javascript" src="http://vortex.accuweather.com/adc2010/javascripts/site.min-20150211-1002.js"></script>
+            <script src="https://tags.crwdcntrl.net/c/5355/cc.js?ns=_cc5355" id="LOTCC_5355"></script>
+            <script>
+                _cc5355.bcp();
+            </script>
+                    <script type="text/javascript" src="http://vortex.accuweather.com/adc2010/javascripts/ads-gpt.min-20150211-1002.js"></script>
+                    <script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+
+
+        <script type="text/javascript">
+        var settingsCke = "acm";
+        sj_SelectCountry = "Select a Country";
+
+            function acmCitySubmit(key) {
+
+                var s_value = document.getElementById('s').value;
+                if (s_value == "Enter postal code or city...") {
+                    return false;
+                }
+
+                if (s_value === "") {
+                    return false;
+                }
+                var isKeyPress = (key) ? 'EnterKey' : 'ButtonClick';
+
+                if (s_value == "Blanchardstown, Ireland") {
+                    gaManager.trackEvent('LocationBox', 'DefaultLocation', s_value.toLowerCase());
+                    setTimeout(function () {
+                        window.location.href = 'http://www.accuweather.com/en/ie/blanchardstown/207933/weather-forecast/207933';
+                    }, 50);
+                } else {
+                    gaManager.trackEvent('LocationBox', 'SearchLocation', s_value.toLowerCase());
+                    //setTimeout(function () {
+                    //    document.forms["findcity"].submit();
+                    //}, 50);
+                    // Execute it right away to prevent double-submit.
+                    document.forms["findcity"].submit();
+                }
+            }
+
+
+        </script>
+
+    
+    <script>
+        var _comscore = _comscore || [];
+        _comscore.push({ c1: "2", c2: "6005068" });
+        (function () {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })()
+    </script>
+</head>
+<body id="forecast-extended" class="forecast">
+
+    <style type="text/css">
+        #eu-cookie-notify-wrap { padding:10px; background-color:#feedb9; border-bottom:2px solid #5470a0; }
+        #eu-cookie-notify { width:988px; margin:0 auto; text-align:center; }
+    </style>
+    <div id="eu-cookie-notify-wrap">
+        <div id="eu-cookie-notify">
+            <a id="lnk-eu-cookie-learn" href="http://www.accuweather.com/en/privacy#adChoices">
+                This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies. Find out more here
+            </a>
+        </div>
+    </div>
+
+<span id="dynamic-menu-container"></span> 
+<div id="menu-cities" class="menu menu-list add-interest-menu"> 
+  <div class="menu-head-lt"> 
+    <div class="menu-head-rt"> 
+      <div class="menu-head"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-head-lt --> 
+  <div class="menu-body-lt"> 
+    <div class="menu-body-rt"> 
+      <div class="menu-body"> 
+        <ul class="menu-items">
+            <li><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weather-forecast/207933">Blanchardstown, Ireland</a></li>
+            <li><a href="http://www.accuweather.com/en/us/new-york-ny/10017/weather-forecast/349727">New York, NY</a></li>
+            <li><a href="http://www.accuweather.com/en/us/miami-fl/33128/weather-forecast/347936">Miami, FL</a></li>
+            <li><a href="http://www.accuweather.com/en/us/los-angeles-ca/90012/weather-forecast/347625">Los Angeles, CA</a></li>
+          <li><a href="http://www.accuweather.com/en/browse-locations">Browse for your location</a></li> 
+        </ul>
+        <span class="arrow"></span><span class="arrow-border"></span>
+      </div> 
+    </div> 
+  </div> 
+  <!-- /.menu-body-lt --> 
+  <div class="menu-foot-lt"> 
+    <div class="menu-foot-rt"> 
+      <div class="menu-foot"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-foot-lt --> 
+</div> 
+
+<!-- NEW! menu -->
+<div id="current-city-menu" class="menu menu-list add-interest-menu">
+  <div class="menu-head-lt"><div class="menu-head-rt"><div class="menu-head"></div></div></div><!-- /.menu-head-lt -->
+  <div class="menu-body-lt">
+  <div class="menu-body-rt">
+  <div class="menu-body">
+	<ul>
+        <li><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weather-forecast/207933">Today's Weather</a></li>
+        <li><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/hourly-weather-forecast/207933">Hourly Forecast</a></li> 
+        <li><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933">Extended</a></li> 
+        <li><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weekend-weather/207933">Weekend</a></li> 
+        <li><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/march-weather/207933">Month Outlook</a></li> 
+        <li><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/current-weather/207933">Current Weather</a></li> 
+	</ul>
+  <span class="arrow"></span>
+  <span class="arrow-border"></span>	
+  </div>
+  </div>
+  </div>
+  <!-- /.menu-body-lt -->
+  <div class="menu-foot-lt"><div class="menu-foot-rt"><div class="menu-foot"></div></div></div><!-- /.menu-foot-lt -->
+
+</div>
+<!-- #/current-city-menu -->
+
+<div id="current-country-menu" class="menu menu-list add-interest-menu">
+  <div class="menu-head-lt">
+    <div class="menu-head-rt">
+      <div class="menu-head"></div>
+    </div>
+  </div>
+  <!-- /.menu-head-lt -->
+  <div class="menu-body-lt">
+    <div class="menu-body-rt">
+      <div class="menu-body">
+        <ul>
+          <li class="first"><a href="http://www.accuweather.com/en/ie/ireland-weather">Home</a></li>
+        </ul>
+        <ul>
+                <li class="first"><a href="http://www.accuweather.com/en/ie/national/weather-radar">Radar &amp; Maps</a></li>
+                <li><a href="http://www.accuweather.com/en/ie/national/weather-radar">Radar</a></li>
+                <li><a href="http://www.accuweather.com/en/ie/national/satellite">Satellite</a></li>
+                <li><a href="http://www.accuweather.com/en/ie/national/weather-forecast-maps">Weather Forecast Maps</a></li>
+        </ul>
+        <ul>
+          <li class="first"><a href="http://www.accuweather.com/en/weather-news">News & Video</a></li>
+          <li><a href="http://www.accuweather.com/en/weather-news">Weather News</a></li>
+          
+          <li><a href="http://videowall.accuweather.com" target="_blank">Weather Video</a></li>
+          <li><a href="http://www.accuweather.com/en/weather-blogs">Weather Blogs</a></li>
+          <li><a href="http://www.accuweather.com/en/personalities">Personalities</a></li>
+        </ul>
+        <ul>
+          <li class="first"><a href="http://www.accuweather.com/en/climate-change">Extreme Weather</a></li>
+          <li><a href="http://www.accuweather.com/en/climate-change">Climate Change</a></li>
+        </ul>
+        <ul>
+          <li class="first"><a href="http://www.accuweather.com/en/social">Social</a></li>
+          <li><a href="http://www.accuweather.com/en/social">Social Media</a></li>
+          <li><a href="http://www.accuweather.com/en/downloads">Apps & Downloads</a></li>
+          <li><a href="http://photo.accuweather.com">Weather Photos</a></li>
+          <li><a href="http://forums.accuweather.com">Weather Forums</a></li>
+        </ul>
+        <div class="clearfix"></div>
+        <span class="arrow"></span> <span class="arrow-border"></span> </div>
+    </div>
+  </div>
+  <!-- /.menu-body-lt -->
+  <div class="menu-foot-lt">
+    <div class="menu-foot-rt">
+      <div class="menu-foot"></div>
+    </div>
+  </div>
+  <!-- /.menu-foot-lt --> 
+</div>
+<!-- #/current-country-menu -->
+
+<div id="menu-premium" class="menu menu-with-title">
+  <h3 class="menu-title"><span>Login</span></h3> 
+  <div class="menu-head-lt"> 
+    <div class="menu-head-rt"> 
+      <div class="menu-head"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-head-lt --> 
+  <div class="menu-body-lt"> 
+    <div class="menu-body-rt"> 
+      <div class="menu-body"> 
+        <ul class="menu-items"> 
+          <li><a href="https://wwwl.AccuWeather.com/premium_login.php" target="_blank">AccuWeather.com Premium</a></li> 
+          
+          <li><a href="https://wwwl.AccuWeather.com/pro_login.php" target="_blank">AccuWeather.com Professional</a></li> 
+          <li><a href="http://radarplus.accuweather.com/" target="_blank">AccuWeather.com RadarPlus</a></li> 
+          <li><a href="http://www.accuweather.com/adcbin/public/LightningPlus_Benefits.asp" target="_blank">AccuWeather.com LightningPlus</a></li> 
+        </ul> 
+      </div> 
+    </div> 
+  </div> 
+  <!-- /.menu-body-lt --> 
+  <div class="menu-foot-lt"> 
+    <div class="menu-foot-rt"> 
+      <div class="menu-foot"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-foot-lt --> 
+</div> 
+
+
+<div id="menu-settings" class="menu menu-with-title"> 
+  
+  <h3 class="menu-title"><span></span></h3> 
+  
+  <div class="menu-head-lt"> 
+    <div class="menu-head-rt"> 
+      <div class="menu-head"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-head-lt --> 
+  <div class="menu-body-lt"> 
+    <div class="menu-body-rt"> 
+      <div class="menu-body"> 
+        
+      <h4>My Settings</h4> 
+      
+      <div class="control-wrap"> 
+      
+      <form action="" method="post" autocomplete="false"> 
+           
+      <label for="settings-language"></label> 
+      <select id="settings-language" name="language" class="match-toggle" onchange="acm_updateLanguage(this.options[this.selectedIndex].value, (this.selectedIndex+1));">
+       <option value="en-us">English (US)</option>
+<option value="es">Espa&#241;ol</option>
+<option value="fr">Fran&#231;ais</option>
+<option value="da">Dansk</option>
+<option value="pt">Portugu&#234;s</option>
+<option value="nl">Nederlands</option>
+<option value="no">Norsk</option>
+<option value="it">Italiano</option>
+<option value="de">Deutsch</option>
+<option value="sv">Svenska</option>
+<option value="fi">Suomi</option>
+<option value="zh-hk">中文 (HK)</option>
+<option value="zh-cn">中文 (SIM)</option>
+<option value="zh-tw">中文 (Taiwan)</option>
+<option value="es-ar">Espa&#241;ol (Argentina)</option>
+<option value="es-mx">Espa&#241;ol (Latin America)</option>
+<option value="sk">Slovenčinu</option>
+<option value="ro">Romana</option>
+<option value="cs">Čeština</option>
+<option value="hu">Magyar</option>
+<option value="pl">Polski</option>
+<option value="ca">Catal&#224;</option>
+<option value="pt-br">Portugu&#234;s (Brazil)</option>
+<option value="hi">हिन्दी</option>
+<option value="ru">русский</option>
+<option value="ar">عربي</option>
+<option value="el">Ελληνικά</option>
+<option value="en-gb">English (UK)</option>
+<option value="ja">日本語</option>
+<option value="ko">한국어</option>
+<option value="tr">T&#220;RK&#199;E</option>
+<option value="fr-ca">Fran&#231;ais (Canada)</option>
+<option value="he">עברית</option>
+<option value="sl">Slovenski</option>
+<option value="uk">Українське</option>
+<option value="id">Bahasa Indonesia</option>
+<option value="bg">български</option>
+<option value="et">Eesti keeles</option>
+<option value="hr">Hrvatski</option>
+<option value="kk">Қазақша</option>
+<option value="lt">Lietuvių</option>
+<option value="lv">Latviski</option>
+<option value="mk">Македонски</option>
+<option value="ms">Bahasa Melayu</option>
+<option value="tl">Tagalog</option>
+<option value="sr">Srpski</option>
+<option value="th">ไทย</option>
+<option value="vi">Tiếng Việt</option>
+<option value="fa">فارسی</option>
+<option value="bn">বাংলা</option>
+<option value="bs">bosanski</option>
+<option value="is">íslenska</option>
+<option value="sw">Kiswahili</option>
+<option value="ur">اُردُو</option>
+<option value="sr-me">Crnogorski</option>
+<option value="uz">Oʻzbekcha</option>
+<option value="az">Azərbaycanca</option>
+
+      </select>
+
+      </div> 
+      <!-- /.control-wrap --> 
+ 
+      <div id="radio-toggle-temp-unit" class="radio-toggle"> 
+        <label for="settings-temp-unit-farenheit" class="first"> 
+          <span>&deg;F</span> 
+          <input id="settings-temp-unit-farenheit" name="temp_unit" type="radio"  value="farenheit" onclick="acm_updateUnits('0');"/> 
+        </label> 
+ 
+        <label for="settings-temp-unit-celsius" class="last"> 
+          <span>&deg;C</span> 
+          <input id="settings-temp-unit-celsius" name="temp_unit" type="radio" checked="checked" value="celsius" onclick="acm_updateUnits('1');"/> 
+        </label> 
+      </div> 
+      <!-- /.radio-toggle --> 
+    
+             </form>
+    
+      </div> 
+    </div> 
+  </div> 
+  <!-- /.menu-body-lt --> 
+  
+  <div class="menu-foot-lt"> 
+    <div class="menu-foot-rt"> 
+      <div class="menu-foot"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-foot-lt -->      
+  
+</div> 
+<!-- /#settings-menu -->
+
+<div id="menu-country" class="menu menu-with-title"> 
+ 
+  <h3 class="menu-title"><span><span class="flag-IE">Ireland</span></span></h3> 
+ 
+  <div class="menu-head-lt"> 
+    <div class="menu-head-rt"> 
+      <div class="menu-head"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-head-lt --> 
+  <div class="menu-body-lt"> 
+    <div class="menu-body-rt"> 
+      <div class="menu-body"> 
+ 
+      <h4>My Recent Countries</h4> 
+ 
+      <ul class="menu-items"> 
+            <li><a href="http://www.accuweather.com/en/ie/ireland-weather" class="flag-IE">Ireland</a></li>
+            <li><a href="http://www.accuweather.com/en/us/united-states-weather" class="flag-US">United States</a></li>
+            <li><a href="http://www.accuweather.com/en/cn/china-weather" class="flag-CN">China</a></li>
+      </ul> 
+ 
+      <a href="#country-selector" id="bt-more-countries">More Countries</a> 
+    
+      </div> 
+    </div> 
+  </div> 
+  <!-- /.menu-body-lt --> 
+  
+  <div class="menu-foot-lt"> 
+    <div class="menu-foot-rt"> 
+      <div class="menu-foot"></div> 
+    </div> 
+  </div> 
+  <!-- /.menu-foot-lt -->     
+    
+</div> 
+<!-- /#menu-country --> 
+
+<!-- add interest dropdown -->
+<div id="add-interest-dropdown" class="clearfix">
+
+	<div id="inner-content" class="clearfix">		
+	</div><!-- end add-interest-inner-content -->
+						
+	<!-- icons -->
+	<span class="arrow"></span>
+	<span class="arrow-border"></span>
+	<!-- end icons -->
+
+</div><!-- end id="add-interest-dropdown" -->
+
+<div id="wrap" class="winter h-su">
+  <div id="wrap-header-nav" class="day">
+    <div id="header-nav" class="i-3-header">
+      
+    
+<div id="header"> 
+
+    <div id="header-davek">
+        <div id="header-davek-ps"></div>
+        <div id="header-oop" style="position:absolute; width:1px; height:1px; left:0px; top:0px;"></div>
+                <script type="text/javascript">
+                    adManagerCopy.displayAd("header-davek-ps");
+                </script>
+    </div>        
+
+  <!-- /#header-ad --> 
+  <style type="text/css">
+    #header-nav{overflow:visible;position:static;height:auto;}
+    #header-davek{margin-top:0px;padding-top:4px;}
+  </style>
+ 
+<div id="wrap-country-settings"> 
+    <div id="country-settings"> 
+        <a href="#menu-country" id="bt-menu-country" class="menu-arrow tmenu { el:'#menu-country', affix: { from: 'nw', to: 'nw', offset: [ -6, -8 ] } }"><strong><span class="ir flag-IE">Ireland</span></strong></a>
+        <ul id="country-breadcrumbs"> 
+       
+                    <li class="first"><a href="http://www.accuweather.com/en/world-weather">World</a></li> 
+                    <li><a href="http://www.accuweather.com/en/europe-weather">Europe</a></li> 
+                    <li><a href="http://www.accuweather.com/en/ie/ireland-weather">Ireland</a></li> 
+                    <li><a href="http://www.accuweather.com/en/ie/d/dublin-weather">Dublin</a></li>  
+                        <li class="last"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weather-forecast/207933">Blanchardstown</a></li>
+    </ul> 
+    <!-- /#country-breadcrumbs --> 
+  </div> 
+  <!-- /#nav-country --> 
+</div> 
+<!-- /#wrap-nav-country -->  
+
+<div id="country-selector" class="strong panel"> 
+ 
+  <div class="panel-head-lt"><div class="panel-head-rt"><div class="panel-head"></div></div></div> 
+  <div class="panel-body-lt"> 
+  <div class="panel-body-rt"> 
+  <div class="panel-body"> 
+    <div class="title"> 
+    <button class="bt bt-panel-close">Close</button> 
+    <div id="country-selector-recent"> 
+      <h3>My Recent Countries</h3>  
+      <ul> 
+            <li class="first"><a href="http://www.accuweather.com/en/ie/ireland-weather" class="flag-IE">Ireland</a></li>
+            <li class=""><a href="http://www.accuweather.com/en/us/united-states-weather" class="flag-US">United States</a></li>
+            <li class=""><a href="http://www.accuweather.com/en/cn/china-weather" class="flag-CN">China</a></li>
+      </ul> 
+    </div> 
+    <!-- /#country-selector-recent --> 
+    </div> 
+    <!-- /.title --> 
+ 
+    <div id="country-selector-region" class="panel-content"> 
+      
+      <div class="title"> 
+        <h3>Select a Region</h3>
+      </div> 
+      
+      <div class="content"> 
+        
+        <ul id="country-selector-region-list" class="menu-items"> 
+          <li><a class="link-region" id="link-region-afr" href="#region-afr">Africa</a></li> 
+          <li><a class="link-region" id="link-region-ant" href="#region-ant">Antarctica</a></li> 
+          <li><a class="link-region" id="link-region-arc" href="#region-arc">Arctic</a></li> 
+          <li><a class="link-region" id="link-region-asi" href="#region-asi">Asia</a></li> 
+          <li><a class="link-region" id="link-region-cac" href="#region-cac">Central America</a></li> 
+          <li><a class="link-region" id="link-region-eur" href="#region-eur">Europe</a></li> 
+          <li><a class="link-region" id="link-region-mea" href="#region-mea">Middle East</a></li> 
+          <li><a class="link-region" id="link-region-nam" href="#region-nam">North America</a></li> 
+          <li><a class="link-region" id="link-region-ocn" href="#region-ocn">Oceania</a></li> 
+          <li><a class="link-region" id="link-region-sam" href="#region-sam">South America</a></li> 
+        </ul> 
+        <!-- /#country-selector-region-list --> 
+        
+        <div id="country-selector-region-map">         
+        </div> 
+        <!-- /#country-selector-region-map --> 
+      </div> 
+      <!-- /.content --> 
+    </div> 
+    <!-- /#country-selector-region --> 
+ 
+ 
+    <div id="country-selector-country" class="panel-content"> 
+      <div id="region-afr" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /africa--> 
+      <div id="region-eur" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /europe--> 
+      <div id="region-nam" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /north america--> 
+      <div id="region-sam" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /south america--> 
+      <div id="region-cac" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /central america--> 
+      <div id="region-ocn" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /oceania--> 
+      <div id="region-mea" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /middle east--> 
+      <div id="region-ant" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /antarctica--> 
+      <div id="region-arc" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /arctic--> 
+      <div id="region-asi" class="region"> 
+        <div class="title"> <a href="#country-selector-region" class="world"><span>World</span></a> 
+          <h3></h3> 
+        </div> 
+        <div class="items"> </div> 
+      </div> 
+      <!-- /asia--> 
+    </div> 
+    <!-- /#country-selector-country --> 
+ 
+
+    <div id="country-selector-notes"> 
+      <p class="first">
+        Note: Select a region before finding a country. 
+      </p> 
+ 
+      <p></p> 
+      
+    </div> 
+    <!-- /#country-selector-notes --> 
+ 
+    
+  </div> 
+  </div> 
+  </div> 
+  <!-- /.panel-body-lt --> 
+ 
+  <div class="panel-foot-lt"><div class="panel-foot-rt"><div class="panel-foot"></div></div></div> 
+ 
+</div> 
+<!-- / #country-selector --> 
+
+
+  <div id="header-logo-search" class="clearfix"> 
+        <div id="header-logo" class="ir"><span>Blanchardstown Current Weather</span></div> 
+    <label for="s">for</label> 
+    
+    <div id="wrap-s-rt"> 
+    <div id="wrap-s-lt"> 
+    <div id="wrap-s" class="tmenu { affix: {offset: [ 0, 7 ], to: 'sw', from: 'nw'},el: '#menu-cities' }">
+        <form id="findcity" action="http://www.accuweather.com/en/search-locations" method="post">
+          <input onkeypress="acmCheckEnter(event);" id="s" name="s" type="text" autocomplete="off" 
+            class="text hint { help: 'Blanchardstown, Ireland',className:'hintedLoc' }" /> 
+          <input type="hidden" name="rn" value="3day" />
+        <button onclick="acmCitySubmit()" type="button" class="bt bt-go">
+                <div></div>
+        </button>
+        </form> 
+        <script type="text/javascript">
+            (function ($) {
+                $('input.hint').hint();
+            })(jQuery);      
+        </script>
+    </div> 
+    </div> 
+    </div> 
+    <!-- /#wrap-s-rt --> 
+    
+    <!-- NEW! Removed widgets to accommodate login --> 
+    <!-- NEW! Login menu --> 
+  	<a id="bt-menu-login" class="tmenu { el:'#menu-premium', affix: { to: 'ne', from: 'ne', offset: [ 0,-6 ] } }"><span class="menu-arrow"><span>Login</span></span></a>
+	<!-- NEW! moving menu settings here, which affects css -->
+	<a id="bt-menu-settings" class="tmenu { el:'#menu-settings', affix: { from: 'ne', to: 'ne', offset: [ 0,-6 ] } }"><span class="menu-arrow"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>, &deg;C</span></a>
+
+  
+  </div> 
+  <!-- /#header-logo-search --> 
+</div> 
+<!-- /#header --> 
+
+    </div>
+    <!-- /#header-nav -->
+  </div>
+  <!-- /#wrap-header-nav -->
+
+
+  <div id="wrap-content">
+    <div id="content">
+
+<!-- NEW! adding add-interest tab -->
+<div id="nav-main-add-interests" class="clearfix alpha">
+
+	<div id="nav-main-background"></div>
+
+	<ul id="nav-current-location" class="sub-nav">
+		<li id="current-country-tab" class=" tmenu { affix: {offset: [ 0, 5 ], to: 'sw', from: 'nw' }, el: '#current-country-menu' }">
+			<a href="http://www.accuweather.com/en/ie/ireland-weather" class="tab">
+				<span class="current-country">Ireland</span>
+				<span class="title">Weather</span>
+			</a>
+			<span class="bottom-line"></span>
+		</li>
+		<li id="current-city-tab" class="selected tmenu { affix: {offset: [ 0, 5 ], to: 'sw', from: 'nw'}, el: '#current-city-menu' }">
+			<a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weather-forecast/207933" class="tab">
+				<span class="current-city"><h1>Blanchardstown, IE</h1></span>
+				<span class="title"><h2>Local Weather</h2></span>
+				<span class="divider"></span>
+                <span class="more-info-arrow"></span>
+				<div class="more-info-content">
+				</div><!-- end more-info-content -->
+			</a>
+		</li>
+		<li id="locations-dropdown-tab" class="location-menu { el: '#locations-dropdown-menu' }">
+			<a href="#" class="tab">
+				<span class="arrow"></span>
+				<span class="right-arrow"></span>
+			</a>
+			<span class="cover-line"></span>
+		</li>
+	</ul><!-- end nav-current-location -->
+
+		<ul id="nav-featured" class="sub-nav add-interest-nav">
+			<li class="cold-flu featured { code:'10302' }">
+				<a href="http://www.accuweather.com/en/ie/blanchardstown/207933/cold-flu-weather/207933" class="tab">
+					<span class="title">Cold &amp; Flu</span>
+						<!-- icons -->
+						<span class="close-outer">
+                            <span class="close">
+                                <span>x</span>
+                            </span>
+						</span>
+                        <span class="arrow"></span>
+                        <span class="arrow-border"></span>
+						<span class="icon cold-flu"></span>
+						<span class="featured-tag"></span>
+						<!-- end icons -->
+				</a>
+			</li>
+		</ul>
+	<div id="nav-interests-carousel" class="clearfix">
+		<div class="outer-carousel">
+			<div class="carousel-relative-container">
+				<button class="carousel-button carousel-left disabled">
+					<span class="inner-button">
+						<span class="arrow"></span>
+					</span><!-- end inner-button-->
+				</button>
+				<button class="carousel-button carousel-right">
+					<span class="inner-button">
+						<span class="arrow"></span>
+					</span><!-- end inner-button-->
+				</button>
+
+				<div class="inner-carousel clearfix">
+					<ul id="nav-interests" class="sub-nav add-interest-nav">
+
+						<li id="add-new-interest" class="{affix: {inset:[-218,-10]}, el: '#add-interest-dropdown'}">
+							<a href="#add-interest-dropdown" class="tab">
+								<span class="visuallyhidden">Add New Interest</span>
+									<!-- icons -->
+									<span class="icon"></span>
+									<!-- end icons -->
+							</a>
+						</li>
+					</ul><!-- end nav-interests -->
+				</div><!-- end inner-carousel -->
+			</div><!-- end carousel-relative-container -->
+		</div><!-- end outer-carousel-->
+	</div><!-- end nav-interests-carousel-->
+
+		<!-- New! locations dropdown menu -->
+		<div id="locations-dropdown-menu" class="menu">
+			<div class="outer-border">
+				<div id="locations-carousel" class="locations-carousel">
+					<button class="carousel-button carousel-left disabled">
+						<span class="inner-button">
+							<span class="arrow"></span>
+						</span><!-- end inner-button-->
+					</button>
+					<button class="carousel-button carousel-right">
+						<span class="inner-button">
+							<span class="arrow"></span>
+						</span><!-- end inner-button-->
+					</button>
+					<div class="outer-carousel">
+						<div class="inner-carousel clearfix">
+
+							<div class="my-recent-locations clearfix">
+								<h3>My Recent Locations</h3>
+								<ul>
+                                
+								</ul>
+							</div><!-- end my recent locations -->
+
+						</div><!-- end inner-carousel-->
+					</div><!-- end outer-carousel -->
+				</div><!-- end carousel -->
+			</div><!-- outer-border -->
+		</div><!-- end locations-dropdown-menu -->
+
+</div><!-- end nav-main-add-interests-->
+
+<script type="text/javascript">
+    acm.setupMenus();
+</script>
+
+        
+
+
+<div class="subnav-head-tabs-rt clearfix">
+    <div class="subnav-head-tabs-lt clearfix">
+    <ul class="subnav-tab-buttons">
+    
+
+    <li ><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weather-forecast/207933"><span>Now</span></a></li>
+    <li ><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weekend-weather/207933"><span>Weekend</span></a></li>
+    <li class="current"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933"><span><strong>Extended</strong></span></a><div class="nub"></div></li>
+    <li ><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/march-weather/207933"><span>Month</span></a></li>
+        <li class=""><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/weather-radar/207933"><span>Radar</span></a></li>
+        <li class="last"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/minute-weather-forecast/207933"><span>MinuteCast<sup>&reg;</sup></span></a></li>
+    <style type="text/css">
+    .subnav-tab-buttons li#subnavpromo {
+        float: right;
+        margin-right: 95px;
+    }
+    .subnav-tab-buttons li#subnavpromo a:hover {
+        border: 1px solid transparent;
+        background: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow:none;
+        box-shadow:none;
+    }
+</style>
+<li id="subnavpromo">
+    <a href="http://videowall.accuweather.com" target="_blank">
+        <img src="http://vortex.accuweather.com/adc2010/images/promos/watch-videos-button.png" />
+    </a>
+</li>
+  
+
+    </ul>
+    </div>
+</div>
+<!-- /.panel-head-rt -->
+
+<div class="column-1 clearfix">
+        <div id="panel-main" class="strong panel">
+          <!-- NOTE: The left and right ordering is swapped for this one, since it's a two element stretch! -->
+          <div class="panel-head-rt">
+            <div class="panel-head-lt">
+            </div>
+          </div>
+          <!-- /.panel-head-rt -->
+          <div class="panel-body-lt">
+            <div class="panel-body-rt">
+              <div class="panel-body">
+
+                 
+<div class="feed-controls clearfix">
+  <span class="lt">1 - 5 of 45 days | <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/month/207933?view=table">All 45 days</a></span>
+  <ul class="g g-nav rt">
+    <li class="first"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=6">Next 5 &gt;</a></li>
+  </ul>
+</div>
+<!-- /.feed-controls -->
+
+<div id="feed-tabs">
+    <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=6" class="arrow-right">Next 5 Days<span></span></a>
+
+  <ul>
+    <li class="day current first cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=1' }">
+    <div class="frame"></div>
+    <div class="bg bg-su">
+        <h3><a href="#">Today</a></h3>
+        <h4>Mar 4</h4>
+        <div class="icon i-3-s "></div>
+        <div class="info">
+        <span class="cond">More sunshine than clouds</span>
+        <strong class="temp">9<span>&deg;</span></strong><span class="low"><span>Lo</span> 2<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv  cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=2' }">
+    <div class="frame"></div>
+    <div class="bg bg-c">
+        <h3><a href="#">Thu</a></h3>
+        <h4>Mar 5</h4>
+        <div class="icon i-7-s "></div>
+        <div class="info">
+        <span class="cond">A thick cloud cover</span>
+        <strong class="temp">10<span>&deg;</span></strong><span class="low"><span>Lo</span> 5<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=2" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv  cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=3' }">
+    <div class="frame"></div>
+    <div class="bg bg-c">
+        <h3><a href="#">Fri</a></h3>
+        <h4>Mar 6</h4>
+        <div class="icon i-7-s "></div>
+        <div class="info">
+        <span class="cond">Cloudy and breezy</span>
+        <strong class="temp">11<span>&deg;</span></strong><span class="low"><span>Lo</span> 7<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=3" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv  cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=4' }">
+    <div class="frame"></div>
+    <div class="bg bg-su">
+        <h3><a href="#">Sat</a></h3>
+        <h4>Mar 7</h4>
+        <div class="icon i-4-s "></div>
+        <div class="info">
+        <span class="cond">Breezy with clouds and sun</span>
+        <strong class="temp">14<span>&deg;</span></strong><span class="low"><span>Lo</span> 6<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=4" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv last cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=5' }">
+    <div class="frame"></div>
+    <div class="bg bg-su">
+        <h3><a href="#">Sun</a></h3>
+        <h4>Mar 8</h4>
+        <div class="icon i-4-s "></div>
+        <div class="info">
+        <span class="cond">Clouds and sun with a shower</span>
+        <strong class="temp">10<span>&deg;</span></strong><span class="low"><span>Lo</span> 2<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=5" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+  </ul>
+</div>
+<!-- /.feed-tabs -->
+
+
+
+                <div id="details">
+                  <ul id="detail-tab-buttons" class="detail-tab-buttons">
+                    <li class="first current { target: '#detail-now' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/current-weather/207933" class=""><span>Now</span></a>
+                      <div class="nub"></div>
+                    </li>
+                    <li class="{ target: '#detail-day-night' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933"><span>Daily</span></a></li>
+                    <li class="last { target: '#detail-hourly' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/hourly-weather-forecast/207933"><span>Hourly</span></a></li>
+                    <li class="{ target: '#detail-morning' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/morning-weather-forecast/207933"><span>Morning</span></a></li>
+                    <li class="{ target: '#detail-afternoon' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/afternoon-weather-forecast/207933"><span>Afternoon</span></a></li>
+                    <li class="{ target: '#detail-evening' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/evening-weather-forecast/207933"><span>Evening</span></a></li>
+                    <li class="last { target: '#detail-overnight' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/overnight-weather-forecast/207933"><span>Overnight</span></a></li>                      
+                  </ul>
+                  <!-- /#detail-tab-buttons.detail-tab-buttons -->
+                  <div id="detail-now" class="detail-tab-panel day">
+                    <div class="bg bg-su">
+                      <div class="forecast">
+                        <div class="icon i-3-xl"></div>
+                        <div class="info"> <span class="cond">Partly sunny</span> <span class="temp">7<span>&deg;</span></span> <span class="realfeel">RealFeel&#174; 2<span>&deg;</span></span> </div>
+                        <!-- /.info -->
+                      </div>
+                      <!-- /.forecast -->
+                      <div class="more-info"> 
+                      <!--
+                        <img src="http://vortex.accuweather.com/adc2010/images/icons-wind/W.gif" width="260" height="138" alt="" />
+                        -->
+                        <div class="wind-box-lg">
+                          <div id="wind-arm-day" class="wind-arm"></div>
+                            <p class="n">N</p>
+                            <p class="e">E</p>
+                            <p class="s">S</p>
+                            <p class="w">W</p>
+	                        <script type="text/javascript">
+	                            (function () {
+	                                var d = 'W';
+	                                var s = '22km/h';
+	                                $('#wind-arm-day').flash({ 'wmode': 'transparent', 'allowScriptAccess': 'always', 'src': 'http://vortex.accuweather.com/adc2010/flash/wind-arm-large.swf?speed=' + s + '&direction=' + d.toLowerCase() + '&units=km/h', 'width': '260', 'height': '138' });
+	                                if (typeof (acm_hasFlash) != 'undefined' && !acm_hasFlash) {
+	                                    $('#wind-arm-day').html('<img src="http://vortex.accuweather.com/adc2010/images/icons-wind/arrow-lg-' + d + '.png" />');
+	                                }
+	                            })();
+	                        </script>
+                          </div> 
+                                                
+                                            
+                        <ul class="stats">
+                          <li>Humidity: <strong>70%</strong></li>
+                          <li>Pressure: <strong>1032.00 mb &uarr;</strong></li>
+                          <li>UV Index: <strong>2</strong></li>
+                          <li>Cloud Cover: <strong>35%</strong></li>
+                          <li>Ceiling: <strong>11278 m</strong></li>
+                          <li>Dew Point: <strong>2&#176;&nbsp;C</strong></li>
+                          <li>Visibility: <strong>16 km</strong></li>
+                        </ul>
+                        <!-- /.stats -->
+                      </div>
+                      <!-- /.more-info -->
+                      
+                      <div style="position:absolute;top:124px;left:427px;height:20px;font-weight:bold;font-size:10px;text-align:center;">22 km/h</div>
+                       
+                    </div>
+                    <!-- /.bg -->
+                  </div>
+                  <!-- /.detail-tab-panel --> 
+                </div>
+                <!-- /#details -->
+
+                <script>acm.setupLifestylePromoLinks(jQuery);</script>
+
+                        <div id="feature-sun" class="feature feature-first">
+          <div class="feature-title">
+            <h3 class="lt">Sunrise/Sunset</h3>
+          </div>
+          <!-- /.feature-title -->
+          
+          <img src="http://vortex.accuweather.com/adc2010/images/features/sun.jpg" width="289" height="108" alt="Sunrise / Sunset Illustration" />
+          
+          <p class="time-period">
+            <span class="ac">Rises at</span>
+            <span class="start">7:07 AM</span>
+            <span class="ac">with</span>
+           
+                <span class="time">11:02</span>
+           
+            <span class="ac">of sunlight, then sets at</span>
+            <span class="finish">6:09 PM</span>
+          </p>
+          <!-- /.content -->
+        </div>
+        <!-- /.feature -->
+
+        <div id="feature-moon" class="feature">        
+          <div class="feature-title">
+            <h3 class="lt">Moonrise/Moonset</h3>
+            <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/astronomy-weather/207933" class="more rt">Astronomy &gt;</a>
+          </div>
+          <!-- /.feature-title -->
+          
+          <img src="http://vortex.accuweather.com/adc2010/images/features/moon.jpg" width="289" height="108" alt="Moonrise / Moonset Illustration" />
+          
+          <p class="time-period">
+            <span class="ac">Rises at</span>
+            <span class="start">5:10 PM</span>
+            <span class="ac">with</span>
+            <span class="time">13:33</span>
+            <span class="ac">of moolight, then sets at</span>
+            <span class="finish">6:43 AM</span>
+          </p>
+          <!-- /.content -->
+        </div>
+
+        <!-- /.feature -->
+
+                <div class="panel-body-content">
+                <div class="feature-stats">
+                  <h3>Temperature Summary - 12:07 PM</h3>
+                  <div class="clearfix">
+                    <div class="lt" style="width:290px;">
+                      <table cellspacing="0" class="stats">
+                        <thead>
+                          <tr>
+                            <th>&nbsp;</th>
+                            <th>Temp (&deg;C)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="pre">
+                            <th scope="row">Now</th>
+                            <td>7&deg;</td>
+                          </tr>
+                          <tr class="pre">
+                            <th scope="row">Yesterday</th>
+                                <td>4&deg;</td>
+                          </tr>
+                          <tr class="pre">
+                            <th scope="row">RealFeel&#174;</th>
+                            <td>2&deg;</td>
+                          </tr>
+                          <tr class="pre">
+                            <th scope="row">RealFeel&#174; Shade</th>
+                            <td>0&deg;</td>
+                          </tr>
+                          <tr class="pre">
+                            <th scope="row">Wind Chill</th>
+                            <td>4&deg;</td>
+                          </tr>
+                          <tr class="last pre">
+                            <th scope="row">Dew Point</th>
+                            <td>2&deg;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="rt" style="width:290px;">
+                      <table cellspacing="0" class="stats">
+                        <thead>
+                          <tr>
+                            <th>&nbsp;</th>
+                            <th>Hi / Lo</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="hi">
+                            <th scope="row" style="border-bottom:2px solid transparent;">Previous 6 Hours</th>
+                            <td>7&deg;</td>
+                          </tr>
+                          <tr class="lo">
+                            <th scope="row">&nbsp;</th>
+                            <td>0&deg;</td>
+                          </tr>
+                          <tr class="hi">
+                            <th scope="row" style="border-bottom:2px solid transparent;">Previous 12 Hours</th>
+                            <td>7&deg;</td>
+                          </tr>
+                          <tr class="lo">
+                            <th scope="row">&nbsp;</th>
+                            <td>0&deg;</td>
+                          </tr>
+                          <tr class="hi">
+                            <th scope="row" style="border-bottom:2px solid transparent;">Previous 24 Hours</th>
+                            <td>7&deg;</td>
+                          </tr>
+                          <tr class="lo">
+                            <th scope="row">&nbsp;</th>
+                            <td>0&deg;</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                        <div id="feature-history">
+          <div class="clearfix">
+          <h3 class="lt">Temperature History - Mar 4</h3>
+            <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/month/207933?view=table" class="more rt">more Historical Weather Data &gt;</a>
+            <!-- /.rt -->
+          </div>
+
+          <table cellspacing="0" class="stats">
+          <thead>
+          <tr>
+            <th>&nbsp;</th>           
+            <th>Today</th>
+            <th>Normal</th>
+            <th>Record</th>
+            <th>
+3/4/2014            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="hi">
+            <th scope="row">High</th>
+            <td>9&#176;</td>
+
+				<td class="high">9&#176;</td> 
+
+	            <td>N/A</td> 			
+
+				    <td>11&#176;</td> 
+          </tr>
+
+          <tr class="last lo">
+            <th scope="row">Low</th>
+           <td>2&#176;</td>
+
+				<td class="high">2&#176;</td> 
+
+	            <td>N/A</td> 			
+
+				    <td>3&#176;</td> 
+          </tr>
+          </tbody>
+          </table>
+        </div>
+        <!-- /#feature-history -->
+
+                <div class="panel-body-content">
+                <div class="feature-stats">
+                    <h3>Precipitation Summary - 12:07 PM</h3>
+                    <table cellspacing="0" class="stats">
+                    <thead>
+                        <tr>
+                        <th>&nbsp;</th>
+                        <th>Amount (mm)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="pre">
+                        <th scope="row">Previous 1 Hour</th>
+                        <td>0</td>
+                        </tr>
+                        <tr class="pre">
+                        <th scope="row">Previous 3 Hours</th>
+                        <td>0</td>
+                        </tr>
+                        <tr class="pre">
+                        <th scope="row">Previous 6 Hours</th>
+                        <td>0</td>
+                        </tr>
+                        <tr class="pre">
+                        <th scope="row">Previous 9 Hours</th>
+                        <td>0</td>
+                        </tr>
+                        <tr class="pre">
+                        <th scope="row">Previous 12 Hours</th>
+                        <td>0</td>
+                        </tr>
+                        <tr class="pre">
+                        <th scope="row">Previous 18 Hours</th>
+                        <td>1</td>
+                        </tr>
+                        <tr class="last pre">
+                        <th scope="row">Previous 24 Hours</th>
+                        <td>4</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- /.panel-body-lt -->
+          <div class="panel-foot-lt">
+            <div class="panel-foot-rt">
+              <div class="panel-foot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /#panel-main -->
+
+
+      </div>
+
+      <!-- /.column-1 -->
+
+
+        
+<div class="column-2  clearfix">
+
+
+
+<div id="aadTop300" class="panel">
+  <div class="panel-head-lt">
+    <div class="panel-head-rt">
+      <div class="panel-head"></div>
+    </div>
+  </div>
+
+  <div class="panel-body-lt">
+    <div class="panel-body-rt">
+        <div id="top-panel-body-rt-body" class="ad-lr panel-body">
+            <div id="top-panel-body-rt-body-ps" ></div>
+                                        <script type="text/javascript">
+                                            adManagerCopy.displayAd("top-panel-body-rt-body-ps");
+                                        </script>
+        </div>
+    </div>
+  </div>
+
+  <div class="panel-foot-lt">
+    <div class="panel-foot-rt">
+      <div class="panel-foot"></div>
+    </div>
+  </div>
+</div><div class="panel">
+  <div class="panel-head-rt">
+    <div class="panel-head-lt">
+      <div class="panel-head"></div>
+    </div>
+  </div>
+  <div class="panel-body-lt">
+    <div class="panel-body-rt">
+      <div class="panel-body">
+        <div class="panel-body-content">
+          <a href="http://www.accuweatherglobal.com/demo.php" target="_blank"><img src="http://vortex.accuweather.com/adc2010/images/misc/Ad_Weather_Data_Portal_4.jpg" style="margin:0px auto;" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-foot-lt">
+    <div class="panel-foot-rt">
+      <div class="panel-foot"></div>
+    </div>
+  </div>
+</div>
+<div id="aadBot300" class="panel panel-ad-mr">
+  <div class="panel-head-lt">
+    <div class="panel-head-rt">
+      <div class="panel-head"></div>
+    </div>
+  </div>
+  <div class="panel-body-lt">
+    <div class="panel-body-rt">
+        <div id="bottom-panel-body" class="panel-body">
+            <div id="bottom-panel-body-ps" ></div>
+                    <script type="text/javascript">
+                        adManagerCopy.displayAd("bottom-panel-body-ps");
+                    </script>
+        </div>
+    </div>
+  </div>
+  <div class="panel-foot-lt">
+    <div class="panel-foot-rt">
+      <div class="panel-foot"> </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+      <!-- /.column-2 -->
+
+
+
+<div id="offers" class="offers-extras">
+          <div class="panel">
+            <div class="panel-head-lt">
+              <div class="panel-head-rt">
+                <div class="panel-head"></div>
+              </div>
+            </div>
+            <div class="panel-body-lt">
+              <div class="panel-body-rt">
+                <div class="panel-body">
+                  <div class="panel-body-content">
+                  <a class="{type:'Image',label:'AccuWeather for Windows Phone'}" href="http://www.windowsphone.com/en-us/store/app/accuweather/92507698-67a2-e011-986b-78e7d1fa76f8" target="_blank"><img src="http://vortex.accuweather.com/adc2010/images/features/en/extra_Windows_Phone_Final.png" width="300" height="140" alt="AccuWeather for Windows Phone" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-foot-lt">
+              <div class="panel-foot-rt">
+                <div class="panel-foot"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /extra 1 --> 
+          <div class="panel">
+            <div class="panel-head-lt">
+              <div class="panel-head-rt">
+                <div class="panel-head"></div>
+              </div>
+            </div>
+            <div class="panel-body-lt">
+              <div class="panel-body-rt">
+                <div class="panel-body">
+                  <div class="panel-body-content">
+                  <a class="{type:'Image',label:'Forensic Weather'}" href="http://enterprisesolutions.accuweather.com/legal-forensics?utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_campaign=forensics" target="_blank"><img src="http://vortex.accuweather.com/adc2010/images/features/en/extra_Forensic_v2.png" width="300" height="140" alt="Forensic Weather" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-foot-lt">
+              <div class="panel-foot-rt">
+                <div class="panel-foot"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /extra 2 --> 
+  
+  <div class="panel scroll-panel">
+    <div class="panel-head-lt">
+      <div class="panel-head-rt">
+        <div class="panel-head"></div>
+      </div>
+    </div>
+    <div class="panel-body-lt">
+      <div class="panel-body-rt">
+        <div class="panel-body">
+          <div class="panel-body-content">
+            <h3></h3>
+              <ul class="scroll-area scrollbar">
+                <li><a class="{type:'Text',label:'Exact Location MinuteCast'}" href="http://www.accuweather.com/get/weather?page=minutecast" target="_blank">Exact Location MinuteCast</a></li>
+                <li><a class="{type:'Text',label:'MinuteCast London'}" href="http://www.accuweather.com/en/gb/london/ec4a-2/minute-weather-forecast/328328?utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_content=londonA&amp;utm_campaign=MinuteCast" target="_blank">MinuteCast London</a></li>
+                <li><a class="{type:'Text',label:'AccuWeather for Android'}" href="https://play.google.com/store/apps/details?id=com.accuweather.android&amp;referrer=utm_source%3DADC%26utm_medium%3Dextrasad" target="_blank">AccuWeather for Android</a></li>
+                <li><a class="{type:'Text',label:'AccuWeather&#39;s Superior Accuracy'}" href="http://enterprisesolutions.accuweather.com/success-stories?utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_content=accuweatheradvantage&amp;utm_campaign=SuccessStories" target="_blank">AccuWeather&#39;s Superior Accuracy</a></li>
+                <li><a class="{type:'Text',label:'Free Weather For Your Site'}" href="http://www.accuweather.com/en/free-weather-widgets?utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_campaign=FreeWidget" target="_blank">Free Weather For Your Site</a></li>
+                <li><a class="{type:'Text',label:'Forensic Weather'}" href="http://enterprisesolutions.accuweather.com/legal-forensics?utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_campaign=forensics" target="_blank">Forensic Weather</a></li>
+                <li><a class="{type:'Text',label:'AccuWeather for Windows Phone'}" href="http://www.windowsphone.com/en-us/store/app/accuweather/92507698-67a2-e011-986b-78e7d1fa76f8" target="_blank">AccuWeather for Windows Phone</a></li>
+                <li><a class="{type:'Text',label:'AccuWeather for Windows 8'}" href="http://apps.microsoft.com/webpdp/en-US/app/accuweather-for-windows-8/cf317822-d092-42e8-8066-4cda958a8f7f" target="_blank">AccuWeather for Windows 8</a></li>
+                <li><a class="{type:'Text',label:'AccuWeather Premium'}" href="https://wwwl.accuweather.com/premium_login.php?&amp;utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_campaign=MoreWeather" target="_blank">AccuWeather Premium</a></li>
+                <li><a class="{type:'Text',label:'AccuWeather Professional'}" href="https://wwwl.accuweather.com/pro_login.php#&amp;panel1-2?&amp;utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_campaign=Professional" target="_blank">AccuWeather Professional</a></li>
+                <li><a class="{type:'Text',label:'SkyGuard Warnings'}" href="http://enterprisesolutions.accuweather.com/skyguard?utm_source=adc&amp;utm_medium=ExtraAd&amp;utm_campaign=SkyGuard" target="_blank">SkyGuard Warnings</a></li>
+                <li><a class="{type:'Text',label:'AccuWeather for iPhone'}" href="http://ad.apps.fm/KLbCUWj_sODIH78DcLdbbPE7og6fuV2oOMeOQdRqrE211zBzfDJXGTZQ94TH09AOr-m5edWa3aXitxLfVc8XICGF8r5dIn5r1MQhQV9_k1g" target="_blank">AccuWeather for iPhone</a></li>
+                <li><a class="{type:'Text',label:'Weather Data Portal'}" href="http://www.accuweatherglobal.com/default.php" target="_blank">Weather Data Portal</a></li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-foot-lt">
+      <div class="panel-foot-rt">
+        <div class="panel-foot"></div>
+      </div>
+    </div>
+  </div>
+  <!-- /everything else --> 
+</div>
+<script>
+    (function ($) {
+        $('#offers.offers-extras a').click(function () {
+            var l = $(this).metadata().label;
+            var t = $(this).metadata().type;
+            if (l && t) {
+                gaManager.trackEvent('AccuWeatherExtras2012', t, l);
+            }
+        });
+    })(jQuery);
+</script>
+    </div>
+    <!-- /#content -->
+  </div>
+  <!-- /#wrap-content -->
+
+   <div id="footer">
+    <div id="footer-content-wrapper">
+        <div class="logo-ad">
+            <h5 class="logo">AccuWeather.com</h5>
+            <div id="footer-stevem">
+                <div id="footer-stevem-ps" ></div>
+                        <script type="text/javascript">
+                            adManagerCopy.displayAd("footer-stevem-ps");
+                        </script>
+            </div>
+        </div>
+
+      <div id="custom-goog-search">
+        <style type="text/css">
+        @import url(http://www.google.com/cse/api/branding.css);
+        </style>
+        <div class="cse-branding-right" style="color:#000000">
+            <div class="cse-branding-form">
+                <form action="http://www.google.com" id="cse-search-box" target="_blank">
+                <div>
+                <input type="hidden" name="cx" value="partner-pub-5771594739411148:7839492073" />
+                <input type="hidden" name="ie" value="UTF-8" />
+                <input id="goog-cse-input" type="text" name="q" size="100" />
+                <input id="goog-cse-submit" type="submit" name="sa" value="" />
+                </div>
+                </form>
+            </div>
+            <div class="cse-branding-logo">
+                <img src="http://vortex.accuweather.com/adc2010/images/misc/googlelogo.png" alt="Google" />
+            </div>
+            <div class="cse-branding-text">
+            Custom Search
+            </div>
+        </div>
+      
+      </div>
+      <div id="footer-nav-main" class="clearfix">
+        <div class="first">
+          <ul class="footer-nav-cols">
+            <li class="head">Company</li>
+            <li><a href="http://www.accuweather.com/en/about">About Us</a></li>
+            <li><a href="http://mediakit.accuweather.com" target="_blank">Advertise With Us</a></li>
+            <li><a href="http://mediakit.accuweather.com/self-service-ads" target="_blank">Self-Serve Advertising</a></li>
+            <li><a href="http://accuweathercareers.silkroad.com/" target="_blank">Careers</a></li>
+            <li><a href="http://www.accuweather.com/en/press">Press</a></li>
+            
+            <li><a href="http://www.accuweather.com/en/contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-nav-cols">
+            <li class="head">Enterprise Solutions</li>
+            <li><a href="http://www.accuweather.com/adc2004/pub/products_services/media.asp" target="_blank">Media</a></li>
+            <li><a href="http://enterprisesolutions.accuweather.com/manufacturing" target="_blank">Manufacturing</a></li>
+            <li><a href="http://enterprisesolutions.accuweather.com/retail" target="_blank">Retail</a></li>
+            <li><a href="http://enterprisesolutions.accuweather.com/finance-banking" target="_blank">Finance &amp; Banking</a></li>
+            <li><a href="http://enterprisesolutions.accuweather.com/energy" target="_blank">Energy</a></li>
+              <li><a href="http://enterprisesolutions.accuweather.com/legal-forensics" target="_blank">Forensic Weather Experts</a></li>
+            <li><a href="http://enterprisesolutions.accuweather.com" target="_blank">All Enterprise Solutions</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-nav-cols">
+            <li class="head">Subscription Services</li>
+            <li><a href="https://wwwl.accuweather.com/premium_login.php" target="_blank">AccuWeather Premium</a></li>
+            <li><a href="https://wwwl.accuweather.com/pro_login.php" target="_blank">AccuWeather Professional</a></li>
+            <li><a href="http://radarplus.accuweather.com/" target="_blank">AccuWeather RadarPlus</a></li>
+            <li><a href="http://www.accuweather.com/adcbin/public/LightningPlus_Benefits.asp" target="_blank">Lightning Plus</a></li>
+          </ul>
+        </div>
+        <div class="last">
+          <ul class="footer-nav-cols">
+            <li class="head">Partners</li>
+            <li class="img"><a href="http://www.adci.com/html/worldmap/adc_worldmap_digital_atlas.php" target="_blank" class="adci-world-map"></a></li>
+            <!--<li><a href="" target="_blank">Mobium GPS / GeoMicro</a></li>-->
+          </ul>
+        </div>
+      </div>
+      <div id="footer-tm"> &copy; 2015 AccuWeather, Inc. All Rights Reserved.<br />
+        AccuWeather.com is a registered trademark of AccuWeather, Inc.<br />
+        <a href="http://www.accuweather.com/en/legal">Terms of usage</a> under which this service is provided<br />
+        <a href="http://www.accuweather.com/en/privacy">Privacy Statement</a> | <a href="http://www.accuweather.com/en/privacy#adChoices">Ad Choices</a> </div>
+      <div id="footer-social">
+        <ul>
+          <li class="apps"><a href="http://www.accuweather.com/en/downloads">Apps &amp; Downloads</a></li>
+          <li class="fb"><a href="http://www.facebook.com/AccuWeather" target="_blank">Like Us</a></li>
+          <li class="twt"><a href="http://twitter.com/BreakingWeather" target="_blank">Follow Us</a></li>
+          <li class="utube"><a href="http://www.youtube.com/accuweather" target="_blank">Watch Us</a></li>
+        </ul>
+      </div>
+      <!-- /#footer-info --> 
+    </div>
+    <!-- /#footer-content-wrapper --> 
+  </div>
+<!-- /#footer --> 
+
+    <script>
+        if (typeof (aadSponsoredLinksObj) != 'undefined' && aadSponsoredLinksObj.type == 'google' && aadSponsoredLinksObj.show_links == true) {
+            document.write('<scr' + 'ipt src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></scr' + 'ipt>');
+        } else if (typeof (aadSponsoredLinksObj) == 'undefined') {
+            jQuery('#ad-links').remove();
+        }
+    </script>
+<div id="tracking-pixels"></div>
+
+</div>
+<!-- /#wrap -->
+
+    <div class="vcard">
+        <span class="adr">
+            <span class="locality">
+                <span class="value-title" title="Blanchardstown" ></span>
+            </span>
+            <abbr class="region" title="Dublin">
+                <span class="value-title" title="D" ></span>
+            </abbr>
+            <abbr class="country-name" title="Ireland">
+                <span class="value-title" title="IE" ></span>
+            </abbr>
+        </span>
+        <span class="geo">
+            <span class="latitude">
+                <span class="value-title" title="53.39" ></span>
+            </span>
+            <span class="longitude">
+                <span class="value-title" title="-6.39"></span>
+            </span>
+        </span>
+    </div>
+
+    <script type="text/javascript">
+        var _qoptions = { qacct: 'p-4b4gl_1fWISuU' };
+        if (typeof (apgPageInfoObj) != 'undefined' && apgPageInfoObj.crumb_trail) {
+            _qoptions.labels = apgPageInfoObj.crumb_trail.join('.');
+        }
+    </script>
+    <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+    <noscript>
+    <a href="http://www.quantcast.com/p-4b4gl_1fWISuU" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-4b4gl_1fWISuU.gif" style="display: none" border="0" height="1" width="1" alt="Quantcast"/></a>
+    </noscript>    <script type="text/javascript">
+        (function () {
+            var d = new Image(1, 1);
+            d.onerror = d.onload = function () {
+                d.onerror = d.onload = null;
+            };
+            d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-accuweather&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+        })();
+    </script>
+    <noscript>
+    <img style="display:none;" src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-accuweather&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" />
+    </noscript>
+    <script type="text/javascript">
+        var google_conversion_id = 1013122394;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <script>
+        (function() {
+            var _fbq = window._fbq || (window._fbq = []);
+            if (!_fbq.loaded)
+            { var fbds = document.createElement('script'); fbds.async = true; fbds.src = '//connect.facebook.net/en_US/fbds.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fbds, s); _fbq.loaded = true; }
+            _fbq.push(['addPixelId', '513722158765166']);
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <script>
+        (function() {
+            var _fbq = window._fbq || (window._fbq = []);
+            if (!_fbq.loaded) { var fbds = document.createElement('script'); fbds.async = true; fbds.src = '//connect.facebook.net/en_US/fbds.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(fbds, s); _fbq.loaded = true; }
+        })();
+        window._fbq = window._fbq || [];
+        window._fbq.push(['track', '6020195729798',
+        {'value':'0.00','currency':'CAD'}
+        ]);
+    </script>
+    <noscript>
+        
+        <div style="display:inline;">
+            <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1013122394/?value=0&guid=ON&script=0" />
+        </div>
+        
+        <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=513722158765166&ev=PixelInitialized" />
+        
+        <img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6020195729798&cd[value]=0.00&cd[currency]=CAD&noscript=1" />
+        
+        <img src="http://b.scorecardresearch.com/p?c1=2&c2=6005068&cv=2.0&cj=1" />
+    </noscript>
+    <!-- Cold &amp; Flu/cold-flu -->
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+# scripts by TeoBigusGeekus
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,skip_pager
+own_window_colour black
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer right
+use_xft yes
+
+# Update interval in seconds
+update_interval 3.0
+
+# Minimum size of text area
+minimum_size 170 50
+maximum_width 170
+
+override_utf8_locale yes
+
+# Draw shades?
+draw_shades yes
+default_shade_color black
+
+# Text stuff
+draw_outline yes # amplifies text if yes
+draw_borders no
+#font
+xftfont Tahoma:size=10
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+border_inner_margin 9
+border_outer_margin 0
+
+# border width
+border_width 10
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color ffffff
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 30
+
+imlib_cache_size 0
+text_buffer_size 2048
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${texeci 600 bash $HOME/4_Conky_WeatherCom/4b/4b_WeatherCom}Now: ${execpi 600 sed -n 1p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${image $HOME/4_Conky_WeatherCom/4b/2.png -p 0,12 -s 75x75}
+${font Tahoma:size=14}${goto 120}${execpi 600 sed -n 3p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°${font}
+${font Tahoma:size=8}${goto 110}${execpi 600 sed -n 4p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°${font}
+${goto 110}${execpi 600 sed -n 5p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+
+${color ffe595}W:${color}${execpi 600 sed -n 6p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 120}${color ffe595}Hum:${color}${execpi 600 sed -n 7p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+${color ffe595}Pr:${color}${execpi 600 sed -n 8p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 120}${color ffe595}Vis:${color}${execpi 600 sed -n 9p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+${color ffe595}UV:${color}${execpi 600 sed -n 10p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 120}${color ffe595}DP:${color}${execpi 600 sed -n 11p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°
+${color ffe595}${hr 1}${color}
+${color ffe595}${execpi 600 sed -n 13p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${execpi 600 sed -n 25p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${execpi 600 sed -n 37p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${color}${image $HOME/4_Conky_WeatherCom/4b/14.png -p 0,167 -s 45x45}${image $HOME/4_Conky_WeatherCom/4b/26.png -p 55,167 -s 45x45}${image $HOME/4_Conky_WeatherCom/4b/38.png -p 120,167 -s 45x45}
+
+
+
+${goto 25}${execpi 600 sed -n 15p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°${goto 80}${execpi 600 sed -n 27p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°${goto 145}${execpi 600 sed -n 39p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°
+${font Tahoma:size=8}${color ffe595}Pr: ${color}${execpi 600 sed -n 16p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${color ffe595}Pr: ${color}${execpi 600 sed -n 28p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${color ffe595}Pr: ${color}${execpi 600 sed -n 40p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+${font Tahoma:size=8}${color ffe595}W:${color}${execpi 600 sed -n 18p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${color ffe595}W:${color}${execpi 600 sed -n 30p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${color ffe595}W:${color}${execpi 600 sed -n 42p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+${font Tahoma:size=8}${color ffe595}H: ${color}${execpi 600 sed -n 19p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${color ffe595}H: ${color}${execpi 600 sed -n 31p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${color ffe595}H: ${color}${execpi 600 sed -n 43p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+
+
+
+

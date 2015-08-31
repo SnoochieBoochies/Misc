@@ -1,0 +1,252 @@
+<div class="column-1 clearfix">
+        <div id="panel-main" class="strong panel">
+          <!-- NOTE: The left and right ordering is swapped for this one, since it's a two element stretch! -->
+          <div class="panel-head-rt">
+            <div class="panel-head-lt">
+            </div>
+          </div>
+          <!-- /.panel-head-rt -->
+          <div class="panel-body-lt">
+            <div class="panel-body-rt">
+              <div class="panel-body">
+
+               
+<div class="feed-controls clearfix">
+  <span class="lt">1 - 5 of 45 days | <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/month/207933?view=table">All 45 days</a></span>
+  <ul class="g g-nav rt">
+    <li class="first"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=6">Next 5 &gt;</a></li>
+  </ul>
+</div>
+<!-- /.feed-controls -->
+
+<div id="feed-tabs">
+    <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=6" class="arrow-right">Next 5 Days<span></span></a>
+
+  <ul>
+    <li class="day current first cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=1' }">
+    <div class="frame"></div>
+    <div class="bg bg-su">
+        <h3><a href="#">Today</a></h3>
+        <h4>Mar 4</h4>
+        <div class="icon i-3-s "></div>
+        <div class="info">
+        <span class="cond">More sunshine than clouds</span>
+        <strong class="temp">9<span>&deg;</span></strong><span class="low"><span>Lo</span> 2<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv  cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=2' }">
+    <div class="frame"></div>
+    <div class="bg bg-c">
+        <h3><a href="#">Thu</a></h3>
+        <h4>Mar 5</h4>
+        <div class="icon i-7-s "></div>
+        <div class="info">
+        <span class="cond">A thick cloud cover</span>
+        <strong class="temp">10<span>&deg;</span></strong><span class="low"><span>Lo</span> 5<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=2" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv  cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=3' }">
+    <div class="frame"></div>
+    <div class="bg bg-c">
+        <h3><a href="#">Fri</a></h3>
+        <h4>Mar 6</h4>
+        <div class="icon i-7-s "></div>
+        <div class="info">
+        <span class="cond">Cloudy and breezy</span>
+        <strong class="temp">11<span>&deg;</span></strong><span class="low"><span>Lo</span> 7<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=3" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv  cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=4' }">
+    <div class="frame"></div>
+    <div class="bg bg-su">
+        <h3><a href="#">Sat</a></h3>
+        <h4>Mar 7</h4>
+        <div class="icon i-4-s "></div>
+        <div class="info">
+        <span class="cond">Breezy with clouds and sun</span>
+        <strong class="temp">14<span>&deg;</span></strong><span class="low"><span>Lo</span> 6<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=4" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+    <li class="day hv last cl { href: 'http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=5' }">
+    <div class="frame"></div>
+    <div class="bg bg-su">
+        <h3><a href="#">Sun</a></h3>
+        <h4>Mar 8</h4>
+        <div class="icon i-4-s "></div>
+        <div class="info">
+        <span class="cond">Clouds and sun with a shower</span>
+        <strong class="temp">10<span>&deg;</span></strong><span class="low"><span>Lo</span> 2<span>&deg;</span></span>
+        </div>
+        <!-- /.info -->
+        <a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=5" class="bt-more">more</a>
+    </div>
+    <!-- /.bg -->
+    </li>
+  </ul>
+</div>
+<!-- /.feed-tabs -->
+
+
+
+                <div id="details"> 
+                  <ul id="detail-tab-buttons" class="detail-tab-buttons"> 
+                    <li class="first { target: '#detail-now' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/current-weather/207933" class=""><span>Now</span></a></li>    
+                    <li class="current { target: '#detail-day-night' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/daily-weather-forecast/207933?day=1"><span>Daily</span></a> 
+                      <div class="nub"></div> 
+                    </li>                                        <li class="{ target: '#detail-hourly' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/hourly-weather-forecast/207933"><span>Hourly</span></a></li> 
+                    <li class="{ target: '#detail-morning' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/morning-weather-forecast/207933?day=1"><span>Morning</span></a></li>
+                    <li class="{ target: '#detail-afternoon' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/afternoon-weather-forecast/207933?day=1"><span>Afternoon</span></a></li>
+                    <li class="{ target: '#detail-evening' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/evening-weather-forecast/207933?day=1"><span>Evening</span></a></li>
+                    <li class="last { target: '#detail-overnight' }"><a href="http://www.accuweather.com/en/ie/blanchardstown/207933/overnight-weather-forecast/207933?day=1"><span>Overnight</span></a></li>
+                  </ul> 
+                  <!-- /#detail-tab-buttons.detail-tab-buttons --> 
+
+                  <div id="detail-day-night" class="detail-tab-panel"> 
+                    <div class="day"> 
+                      <div class="bg bg-su"> 
+                        <div class="icon i-3-l"></div> 
+                        <div class="info"> <span class="cond"></span> <span class="hi">Hi </span><span class="temp">9<span>&deg;</span></span> 
+                            <span class="realfeel">RealFeel&#174; 6&#176;</span>
+                            <span class="realfeel">Precipitation 4%</span>
+                        </div> 
+                        <!-- /.info --> 
+                        <div class="nub"></div> 
+                      </div> 
+                      <!-- /.bg --> 
+                      <div class="content"> 
+                        <h4>Day</h4> 
+                        <div class="desc"> 
+                          <div class="rt" style="text-align:center;">
+                            <div class="wind-box-sm">
+                              <div id="wind-arm-day" class="wind-arm"></div>
+                                <p class="n">N</p>
+                                <p class="e">E</p>
+                                <p class="s">S</p>
+                                <p class="w">W</p>
+	                            <script type="text/javascript">
+	                                (function () {
+	                                    var d = 'WSW';
+	                                    var s = '20kph';
+	                                    $('#wind-arm-day').flash({ 'wmode': 'transparent', 'allowScriptAccess': 'always', 'src': 'http://vortex.accuweather.com/adc2010/flash/wind-arm-small.swf?speed=' + s + '&direction=' + d.toLowerCase() + '&units=kph', 'width': '84', 'height': '76' });
+	                                    if (typeof (acm_hasFlash) != 'undefined' && !acm_hasFlash) {
+	                                        $('#wind-arm-day').html('<img src="http://vortex.accuweather.com/adc2010/images/icons-wind/arrow-sm-' + d + '.png" />');
+	                                    }
+	                                })();
+	                            </script>
+                              </div>                             
+                            <!--
+                            <img src="http://vortex.accuweather.com/adc2010/images/icons-wind/sm_WSW.png" width="84" height="76" alt="Wind" />                                
+                            -->
+                            <ul class="stats"> 
+                                <li> 
+                                <strong style="">WSW 20 km/h</strong> 
+                                </li> 
+                                <li style="margin-top:-2px;"> 
+                                Gusts:<strong style=""> 50 km/h</strong> 
+                                </li> 
+                            </ul> 
+                          </div> 
+                          <p>More sunshine than clouds</p> 
+                        </div> 
+                        <!-- /.desc --> 
+                        <ul class="stats"> 
+                          <li>Max UV Index: <strong>2</strong> (Low)</li> 
+                          <li>Thunderstorms: <strong style="">0%</strong></li> 
+                          <li>Precipitation: <strong>0 mm</strong></li> 
+                          <li>Rain: <strong style="">0 mm</strong></li> 
+                          <li>Snow: <strong style="">0 CM</strong></li> 
+                          <li>Ice: <strong style="">0 mm</strong></li>
+                          <li>Hours of Precipitation: <strong>0 hrs</strong></li> 
+                          <li>Hours of Rain: <strong>0 hrs</strong></li> 
+                        </ul> 
+                        <!-- /.stats --> 
+                      </div> 
+                      <!-- /.content --> 
+                    </div> 
+                    <!-- /.day --> 
+                    <div class="night"> 
+                      <div class="bg bg-s"> 
+                        <div class="icon i-36-l"></div> 
+                        <div class="info"> <span class="cond"></span> <span class="lo">Lo </span><span class="temp">2<span>&deg;</span></span> 
+                            <span class="realfeel">RealFeel&#174; -2&#176;</span>
+                            <span class="realfeel">Precipitation 3%</span>
+                        </div> 
+                        <!-- /.info --> 
+                        <div class="nub"></div> 
+                      </div> 
+                      <!-- /.bg --> 
+                      <div class="content"> 
+                        <h4>Night</h4> 
+                        <div class="desc"> 
+                          <div class="rt" style="text-align:center;"> 
+                    
+                            <div class="wind-box-sm">
+                              <div id="wind-arm-night" class="wind-arm"></div>
+                                <p class="n">N</p>
+                                <p class="e">E</p>
+                                <p class="s">S</p>
+                                <p class="w">W</p>
+	                            <script type="text/javascript">
+	                                (function () {
+	                                    var d = 'SW';
+	                                    var s = '15kph';
+	                                    $('#wind-arm-night').flash({ 'wmode': 'transparent', 'allowScriptAccess': 'always', 'src': 'http://vortex.accuweather.com/adc2010/flash/wind-arm-small.swf?speed=' + s + '&direction=' + d.toLowerCase() + '&units=kph', 'width': '84', 'height': '76' });
+	                                    if (typeof (acm_hasFlash) != 'undefined' && !acm_hasFlash) {
+	                                        $('#wind-arm-night').html('<img src="http://vortex.accuweather.com/adc2010/images/icons-wind/arrow-sm-' + d + '.png" />');
+	                                    }
+	                                })();
+	                            </script>
+                              </div>                            
+                          <!--
+                          <img src="http://vortex.accuweather.com/adc2010/images/icons-wind/sm_SW.png" width="84" height="76" alt="Wind" /> 
+                          -->  
+                            <ul class="stats"> 
+                                <li>
+                                <strong style="">SW 15 km/h</strong> 
+                                </li> 
+                                <li style="margin-top:-2px;"> 
+                                Gusts:<strong style=""> 24 km/h</strong> 
+                                </li> 
+                            </ul> 
+                          </div> 
+                          <p>Partly cloudy</p> 
+                        </div> 
+                        <!-- /.desc --> 
+                        <ul class="stats"> 
+                          <li>Max UV Index: <strong>N/A</strong></li> 
+                          <li>Thunderstorms: <strong style="">0%</strong></li> 
+                          <li>Precipitation: <strong>0 mm</strong></li> 
+                          <li>Rain: <strong style="">0 mm</strong></li> 
+                          <li>Snow: <strong style="">0 CM</strong></li> 
+                          <li>Ice: <strong style="">0 mm</strong></li> 
+                          <li>Hours of Precipitation: <strong>0 hrs</strong></li> 
+                          <li>Hours of Rain: <strong>0 hrs</strong></li>
+                        </ul> 
+                        <!-- /.stats --> 
+                      </div> 
+                      <!-- /.content --> 
+                    </div> 
+                    <!-- /.night --> 
+                  </div> 
+                  <!-- /.detail-tab-panel --> 
+                  
+                </div> 
+                <!-- /#details --> 
+                <script>acm.setupLifestylePromoLinks(jQuery);</script>
+
+                    <div id="feature-history">

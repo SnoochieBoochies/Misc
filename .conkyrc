@@ -1,0 +1,198 @@
+# Use Xft?
+use_xft yes
+font snap-7
+#xftfont snap.se:size=6.5
+#xftfont Freemono:size=7:bold
+#xftfont cure.se:size=8
+#xftfont Freesans:pixelsize=10
+xftfont Monospace:pixelsize=10
+xftalpha 1
+text_buffer_size 2048
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type override
+own_window_hints above,undecorated,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 280
+maximum_width 330
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 5
+
+# border width
+border_width 1
+
+# Default colors and also border colors
+default_color FFFFFF
+#default_shade_color white
+#default_outline_color black
+#own_window_colour 000000
+
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment bottom_left
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 3550
+gap_y 20
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+#net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer none
+
+TEXT
+
+DATE ${hr 1}
+${alignc 18}${font Freesans:pixelsize=23:bold}${time %H:%M}${font}
+${alignc}${font Freesans:pixelsize=10}${time %a %d %b %Y}${font}
+
+CALENDAR ${hr 2}
+#${alignc}${execpi 60 DJS=`date +%_d`; cal | sed s/"\(^\|[0-9]\)$DJS"'\b'/'\1${color orange}'"$DJS"'$color'/}
+#${execpi 60 DJS=`date +%_d`; cal | sed s/"\(^\|[0-9]\)$DJS"'\b'/'\1${color orange}'"$DJS"'$color'/ | sed 's/^/${alignc}/'}
+${execpi 60 DJS=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DJS"'\b'/'\1${color orange}'"$DJS"'$color'/ | sed 's/^/${alignc}/'}}
+
+#${execpi 60 DJS=`date +%_d`; cal | sed s/"\(^\|[0-9]\)$DJS"'\b'/'\1${color red}'"$DJS"'$color'/}
+
+
+#${alignc}${font Freesans:size=9}${pre_exec cal -m|head -n -1}${font}
+#${alignc}${pre_exec DJS=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DJS"'\b'/'\1${color orange}'"$DJS"'$color'/}
+
+SYSTEM ${hr 1}
+
+User/Host: ${alignr}${exec whoami}/${nodename}
+OS: ${alignr}${alignr}${alignr}${alignr}${pre_exec lsb_release -d | cut -f 2| tr "[:upper:]" "[:lower:]"}
+Kernel:  ${alignr}${kernel}
+CPU: ${cpu cpu}% ${alignr}${cpubar 8,60 cpu}
+RAM: $memperc% ${alignr}${membar 8,60}
+Core 01: $alignr ${execi 30 sensors | grep 'Core 0' | cut -c17-21}C
+Core 02: $alignr ${execi 30 sensors | grep 'Core 1' | cut -c17-21}C
+Core 03: $alignr ${execi 30 sensors | grep 'Core 2' | cut -c17-21}C
+Core 04: $alignr ${execi 30 sensors | grep 'Core 3' | cut -c17-21}C
+Uptime: ${alignr}${uptime}
+
+HDD ${hr 1}
+
+Home:
+${fs_free /home}/${fs_size /home} ${alignr}${fs_bar 8,60 /home}
+Root:
+${fs_free /root}/${fs_size /root} ${alignr}${fs_bar 8,60 /root}
+
+
+NETWORK ${hr 2}
+#${if_existing /proc/net/route wlan0}
+#Up: ${upspeed wlan0} kb/s ${alignr}${upspeedgraph wlan0 8,60 789E2D A7CC5C}
+#Down: ${downspeed wlan0} kb/s ${alignr}${downspeedgraph wlan0 8,60 789E2D A7CC5C}
+#Upload: ${alignr}${totalup wlan0}
+#Download: ${alignr}${totaldown wlan0}
+#Signal: ${wireless_link_qual wlan0}% ${alignr}${wireless_link_bar 8,60 wlan0}${else}
+#${if_existing /proc/net/route eno1}
+#${if_up eno1}
+#Up: ${upspeed eno1} kb/s ${alignr}${upspeedgraph eno1 8,60 789E2D A7CC5C}
+#Down: ${downspeed eno1} kb/s ${alignr}${downspeedgraph eno1 8,60 789E2D A7CC5C}
+#Upload: ${alignr}${totalup eno1}
+#Download: ${alignr}${totaldown eno1}
+#${endif}
+#${else}${if_existing /proc/net/route eth1}
+#Up: ${upspeed eth1} kb/s ${alignr}${upspeedgraph eth1 8,60 789E2D A7CC5C}
+#Down: ${downspeed eth1} kb/s ${alignr}${downspeedgraph eth1 8,60 789E2D A7CC5C}
+#Upload: ${alignr}${totalup eth1}
+#Download: ${alignr}${totaldown eth1}${endif}${else}${font PizzaDude Bullets:size=14}4${font}   Network Unavailable${endif}
+
+
+WEATHER ${hr 1}
+
+#${execi 300 /home/nmohan/weather.sh "EUR|IE|Blanchardstown"}
+#${execi 300 /home/nmohan/1b2_accuweather_conkyweather_font/1b2}
+#
+#${texeci 500 bash $HOME/1b2_accuweather_conkyweather_font/1b2}
+#${execpi 600 sed -n '1p' $HOME/1b2_accuweather_conkyweather_font/messages}
+#${font conkyweather:size=50}${execi 600  sed -n '27p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}${font}
+#${voffset -70}${goto 150}${color ffe595}TEMP: $color${alignr}${execpi 600 sed -n '29p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}°C (${execpi 600 sed -n '30p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}°C)
+#${goto 150}${color ffe595}WIND: $color${alignr}${execpi 600 sed -n '31p' $HOME/1b2_accuweather_conkyweather_font/curr_cond} ${execpi 600 sed -n '32p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}
+#${goto 150}${color ffe595}HUM: $color${alignr}${execpi 600 sed -n '33p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}
+#${goto 150}${color ffe595}DEW POINT: $color${alignr}${execpi 600 sed -n '37p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}°C
+#${goto 150}${color ffe595}PR: $color${alignr}${execpi 600 sed -n '34p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}
+#${goto 150}${color ffe595}VISIB: $color${alignr}${execpi 600 sed -n '38p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}
+#${goto 150}${color ffe595}CLOUD COVER: $color${alignr}${execpi 600 sed -n '35p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}
+#${goto 150}${color ffe595}UV INDEX: $color${alignr}${execpi 600 sed -n '36p' $HOME/1b2_accuweather_conkyweather_font/curr_cond} 
+#${goto 150}${color ffe595}S/M RISE: $color${alignr}${execpi 600 sed -n '39p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}/${execpi 600 sed -n '41p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}
+#${goto 150}${color ffe595}S/M SET: $color${alignr}${execpi 600 sed -n '40p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}/${execpi 600 sed -n '42p' $HOME/1b2_accuweather_conkyweather_font/curr_cond}
+##today/tomorrow
+#${hr 1}
+#${goto 50}${color ffe595}TODAY$color$font${goto 200}${color ffe595}TONIGHT$color$font
+#${goto 30}${font conkyweather:size=50}${execi 600  sed -n '25p' $HOME/1b2_accuweather_conkyweather_font/first_days}${font}${goto 200}${voffset -40}${font conkyweather:size=50}${execi 600  sed -n '30p' $HOME/1b2_accuweather_conkyweather_font/first_days}${font}
+#${voffset -40}${goto 105}${execpi 600 sed -n '26p' $HOME/1b2_accuweather_conkyweather_font/first_days}°C${goto 150}${execpi 600 sed -n '31p' $HOME/1b2_accuweather_conkyweather_font/first_days}°C
+#${goto 105}(${execpi 600 sed -n '27p' $HOME/1b2_accuweather_conkyweather_font/first_days}°C)${goto 150}(${execpi 600 sed -n '32p' $HOME/1b2_accuweather_conkyweather_font/first_days}°C)
+#${hr 1}
+#${goto 50}${color ffe595}MAP$color$font
+#${image /home/snooch/1b2_accuweather_conkyweather_font/precipitation.png -p 20,20 -s 200x200}
+#
+# New version. Maybe add monaghan weather.
+#
+${texeci 600 bash $HOME/4_Conky_WeatherCom/4b/4b_WeatherCom}Now: ${execpi 600 sed -n 1p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${image $HOME/4_Conky_WeatherCom/4b/2.png -p 0,500 -s 75x75}
+${font Tahoma:size=14}${goto 120}${execpi 600 sed -n 3p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°${font}
+${font Tahoma:size=8}${goto 110}${execpi 600 sed -n 4p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°${font}
+${goto 110}${execpi 600 sed -n 5p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+
+${font Tahoma:size=12}${voffset 20}${color ffe595}W:${color}${execpi 600 sed -n 6p $HOME/4_Conky_WeatherCom/4b/raw_rendered}km/h${goto 120}${color ffe595}
+#Hum:${color}${execpi 600 sed -n 7p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+#${color ffe595}Pr:${color}${execpi 600 sed -n 8p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 120}${color ffe595}Vis:${color}${execpi 600 sed -n 9p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+#${color ffe595}UV:${color}${execpi 600 sed -n 10p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 120}${color ffe595}DP:${color}${execpi 600 sed -n 11p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°
+#${color ffe595}${hr 1}${color}
+
+#${color ffe595}${execpi 600 sed -n 13p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${execpi 600 sed -n 25p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${execpi 600 sed -n 37p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${color}${image $HOME/4_Conky_WeatherCom/4b/14.png -p 0,610-s 45x45}${image $HOME/4_Conky_WeatherCom/4b/26.png -p 55,167 -s 45x45}${image $HOME/4_Conky_WeatherCom/4b/38.png -p 120,167 -s 45x45}
+
+
+
+#${execpi 600 sed -n 15p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°
+#${execpi 600 sed -n 27p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°
+#${execpi 600 sed -n 39p $HOME/4_Conky_WeatherCom/4b/raw_rendered}°
+#${font Tahoma:size=8}${color ffe595}Pr: ${color}${execpi 600 sed -n 16p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${color ffe595}Pr: ${color}${execpi 600 sed -n 28p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${color ffe595}Pr: ${color}${execpi 600 sed -n 40p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+#${font Tahoma:size=8}${color ffe595}W:${color}${execpi 600 sed -n 18p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${color ffe595}W:${color}${execpi 600 sed -n 30p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${color ffe595}W:${color}${execpi 600 sed -n 42p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+#${font Tahoma:size=8}${color ffe595}H: ${color}${execpi 600 sed -n 19p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 75}${color ffe595}H: ${color}${execpi 600 sed -n 31p $HOME/4_Conky_WeatherCom/4b/raw_rendered}${goto 130}${color ffe595}H: ${color}${execpi 600 sed -n 43p $HOME/4_Conky_WeatherCom/4b/raw_rendered}
+#
+#

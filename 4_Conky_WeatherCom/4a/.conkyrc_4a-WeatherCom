@@ -1,0 +1,136 @@
+# scripts by TeoBigusGeekus
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,skip_pager
+own_window_colour black
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer right
+use_xft yes
+
+# Update interval in seconds
+update_interval 3.0
+
+# Minimum size of text area
+minimum_size 300 50
+maximum_width 300
+
+override_utf8_locale yes
+
+# Draw shades?
+draw_shades yes
+default_shade_color black
+
+# Text stuff
+draw_outline yes # amplifies text if yes
+draw_borders no
+#font
+xftfont Tahoma:size=10
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+border_inner_margin 9
+border_outer_margin 0
+
+# border width
+border_width 10
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color ffffff
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 30
+
+imlib_cache_size 0
+text_buffer_size 2048
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${texeci 600 bash $HOME/4_Conky_WeatherCom/4a/4a_WeatherCom}${if_match "${execi 10 sed -n 1p /home/teo/4_Conky_WeatherCom/4a/raw_rendered}"!="Tonight"}${color ffe595}${font Tahoma:size=16}${goto 50}${execpi 600 sed -n 1p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 200}Tonight${color}${image $HOME/4_Conky_WeatherCom/4a/4.png -p 0,30 -s 90x90}${image $HOME/4_Conky_WeatherCom/4a/11.png -p 145,30 -s 90x90}${font}
+
+${goto 115}${execpi 600 sed -n 5p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 265}${execpi 600 sed -n 12p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${goto 115}${color ffe595}PR:${color}${execpi 600 sed -n 6p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 265}${color ffe595}PR:${color}${execpi 600 sed -n 13p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 115}${color ffe595}H:${color}${execpi 600 sed -n 9p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 265}${color ffe595}H:${color}${execpi 600 sed -n 16p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+
+
+${goto 45}${color ffe595}W:${color}${execpi 600 sed -n 8p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 195}${color ffe595}W:${color}${execpi 600 sed -n 15p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 45}${color ffe595}UV:${color}${execpi 600 sed -n 10p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 195}${color ffe595}UV:${color} -
+${goto 45}${color ffe595}S/R:${color}${execpi 600 sed -n 17p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 195}${color ffe595}M/R:${color}${execpi 600 sed -n 19p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 45}${color ffe595}S/S:${color}${execpi 600 sed -n 18p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 195}${color ffe595}M/S:${color}${execpi 600 sed -n 20p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${execpi 600 sed -n 7p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c1-22}${goto 175}${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c1-22}
+${execpi 600 sed -n 7p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c23-44}${goto 175}${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c23-44}
+${execpi 600 sed -n 7p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c45-66}${goto 175}${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c45-66}
+${execpi 600 sed -n 7p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c67-88}${goto 175}${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c67-88}${endif}${if_match "${execi 10 sed -n 1p /home/teo/4_Conky_WeatherCom/4a/raw_rendered}"=="Tonight"}${color ffe595}${font Tahoma:size=16}${goto 120}Tonight${color}${image $HOME/4_Conky_WeatherCom/4a/11.png -p 50,50 -s 90x90}${font}
+
+
+${goto 220}${execpi 600 sed -n 12p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${goto 220}${color ffe595}PR:${color}${execpi 600 sed -n 13p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 220}${color ffe595}H:${color}${execpi 600 sed -n 16p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 220}${color ffe595}W:${color}${execpi 600 sed -n 15p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+
+
+${goto 45}${color ffe595}S/R:${color}${execpi 600 sed -n 17p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 195}${color ffe595}M/R:${color}${execpi 600 sed -n 19p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 45}${color ffe595}S/S:${color}${execpi 600 sed -n 18p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 195}${color ffe595}M/S:${color}${execpi 600 sed -n 20p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c1-50}
+${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c51-100}
+${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c101-150}
+${execpi 600 sed -n 14p $HOME/4_Conky_WeatherCom/4a/raw_rendered|cut -c151-200}${endif}
+${color ffe595}${hr 1}${color}
+${font Tahoma:size=14}${color ffe595}${goto 30}${execpi 600 sed -n 21p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 160}${execpi 600 sed -n 21p $HOME/4_Conky_WeatherCom/4a/raw_rendered} night${color}${image $HOME/4_Conky_WeatherCom/4a/24.png -p 10,280 -s 65x65}${image $HOME/4_Conky_WeatherCom/4a/31.png -p 160,280 -s 65x65}${font}
+${goto 110}${execpi 600 sed -n 25p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 260}${execpi 600 sed -n 32p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${font Tahoma:size=8}${goto 110}${color ffe595}PR:${color}${execpi 600 sed -n 26p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}PR:${color}${execpi 600 sed -n 33p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}H:${color}${execpi 600 sed -n 29p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}H:${color}${execpi 600 sed -n 36p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}W:${color}${execpi 600 sed -n 28p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}W:${color}${execpi 600 sed -n 35p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${font}
+${color ffe595}${hr 1}${color}
+${font Tahoma:size=14}${color ffe595}${goto 30}${execpi 600 sed -n 41p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 160}${execpi 600 sed -n 41p $HOME/4_Conky_WeatherCom/4a/raw_rendered} night${color}${image $HOME/4_Conky_WeatherCom/4a/44.png -p 10,380 -s 65x65}${image $HOME/4_Conky_WeatherCom/4a/51.png -p 160,380 -s 65x65}${font}
+${goto 110}${execpi 600 sed -n 45p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 260}${execpi 600 sed -n 52p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${font Tahoma:size=8}${goto 110}${color ffe595}PR:${color}${execpi 600 sed -n 46p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}PR:${color}${execpi 600 sed -n 53p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}H:${color}${execpi 600 sed -n 49p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}H:${color}${execpi 600 sed -n 56p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}W:${color}${execpi 600 sed -n 48p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}W:${color}${execpi 600 sed -n 55p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${font}
+${color ffe595}${hr 1}${color}
+${font Tahoma:size=14}${color ffe595}${goto 30}${execpi 600 sed -n 61p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 160}${execpi 600 sed -n 61p $HOME/4_Conky_WeatherCom/4a/raw_rendered} night${color}${image $HOME/4_Conky_WeatherCom/4a/64.png -p 10,480 -s 65x65}${image $HOME/4_Conky_WeatherCom/4a/71.png -p 160,480 -s 65x65}${font}
+${goto 110}${execpi 600 sed -n 65p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 260}${execpi 600 sed -n 72p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${font Tahoma:size=8}${goto 110}${color ffe595}PR:${color}${execpi 600 sed -n 66p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}PR:${color}${execpi 600 sed -n 73p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}H:${color}${execpi 600 sed -n 69p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}H:${color}${execpi 600 sed -n 76p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}W:${color}${execpi 600 sed -n 68p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}W:${color}${execpi 600 sed -n 75p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${font}
+${color ffe595}${hr 1}${color}
+${font Tahoma:size=14}${color ffe595}${goto 30}${execpi 600 sed -n 81p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 160}${execpi 600 sed -n 81p $HOME/4_Conky_WeatherCom/4a/raw_rendered} night${color}${image $HOME/4_Conky_WeatherCom/4a/84.png -p 10,580 -s 65x65}${image $HOME/4_Conky_WeatherCom/4a/91.png -p 160,580 -s 65x65}${font}
+${goto 110}${execpi 600 sed -n 85p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 260}${execpi 600 sed -n 92p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${font Tahoma:size=8}${goto 110}${color ffe595}PR:${color}${execpi 600 sed -n 86p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}PR:${color}${execpi 600 sed -n 93p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}H:${color}${execpi 600 sed -n 89p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}H:${color}${execpi 600 sed -n 96p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}W:${color}${execpi 600 sed -n 88p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}W:${color}${execpi 600 sed -n 95p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${font}
+${color ffe595}${hr 1}${color}
+${font Tahoma:size=14}${color ffe595}${goto 30}${execpi 600 sed -n 101p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 160}${execpi 600 sed -n 101p $HOME/4_Conky_WeatherCom/4a/raw_rendered} night${color}${image $HOME/4_Conky_WeatherCom/4a/104.png -p 10,680 -s 65x65}${image $HOME/4_Conky_WeatherCom/4a/111.png -p 160,680 -s 65x65}${font}
+${goto 110}${execpi 600 sed -n 105p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 260}${execpi 600 sed -n 112p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${font Tahoma:size=8}${goto 110}${color ffe595}PR:${color}${execpi 600 sed -n 106p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}PR:${color}${execpi 600 sed -n 113p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}H:${color}${execpi 600 sed -n 109p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}H:${color}${execpi 600 sed -n 116p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}W:${color}${execpi 600 sed -n 108p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}W:${color}${execpi 600 sed -n 115p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${font}
+${color ffe595}${hr 1}${color}
+${font Tahoma:size=14}${color ffe595}${goto 30}${execpi 600 sed -n 121p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 160}${execpi 600 sed -n 121p $HOME/4_Conky_WeatherCom/4a/raw_rendered} night${color}${image $HOME/4_Conky_WeatherCom/4a/124.png -p 10,780 -s 65x65}${image $HOME/4_Conky_WeatherCom/4a/131.png -p 160,780 -s 65x65}${font}
+${goto 110}${execpi 600 sed -n 125p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 260}${execpi 600 sed -n 132p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${font Tahoma:size=8}${goto 110}${color ffe595}PR:${color}${execpi 600 sed -n 126p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}PR:${color}${execpi 600 sed -n 133p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}H:${color}${execpi 600 sed -n 129p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}H:${color}${execpi 600 sed -n 136p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}W:${color}${execpi 600 sed -n 128p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}W:${color}${execpi 600 sed -n 135p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${font}
+${color ffe595}${hr 1}${color}
+${font Tahoma:size=14}${color ffe595}${goto 30}${execpi 600 sed -n 141p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 160}${execpi 600 sed -n 141p $HOME/4_Conky_WeatherCom/4a/raw_rendered} night${color}${image $HOME/4_Conky_WeatherCom/4a/144.png -p 10,880 -s 65x65}${image $HOME/4_Conky_WeatherCom/4a/151.png -p 160,880 -s 65x65}${font}
+${goto 110}${execpi 600 sed -n 145p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°${goto 260}${execpi 600 sed -n 152p $HOME/4_Conky_WeatherCom/4a/raw_rendered}°
+${font Tahoma:size=8}${goto 110}${color ffe595}PR:${color}${execpi 600 sed -n 146p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}PR:${color}${execpi 600 sed -n 153p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}H:${color}${execpi 600 sed -n 149p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}H:${color}${execpi 600 sed -n 156p $HOME/4_Conky_WeatherCom/4a/raw_rendered}
+${goto 110}${color ffe595}W:${color}${execpi 600 sed -n 148p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${goto 260}${color ffe595}W:${color}${execpi 600 sed -n 155p $HOME/4_Conky_WeatherCom/4a/raw_rendered}${font}

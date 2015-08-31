@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#put your 10 day weather.com address here
+#address10="http://www.weather.com/weather/tenday/l/JAXX0085:1:JA"
+address10="http://www.weather.com/weather/tenday/l/EZE:9:AR"
+
+killall -9 phantomjs
+phantomjs --proxy-type=none $HOME/4_Conky_WeatherCom/4a/save_page.js $address10 > $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+
+sed -i '/data.title\" class=\"\|ng-isolate-scope wx-weather-icon\|temperature ng-isolate-scope\|precip ng-isolate-scope\|narrative ng-binding\|wx-wind ng-isolate-scope ng-binding\|data\.astro\.getSunriseTimeLocal()" data-format=\|data\.astro\.getSunsetTimeLocal()" data-format=\|data\.astro\.getMoonriseTimeLocal()" data-format=\|data\.astro\.getMoonsetTimeLocal()" data-format=\|data\.getUVIndex()" class=\|getHumidity()" class=/!d' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+
+sed -i -e 's/^\s*//g' -e '/isFullDay/s/^.*ng-binding">//g' -e '/isFullDay/s/<.*$//g' -e 's/^.*wxicon\/svgz\///g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+sed -i -e 's/svgz.*$/svgz/g' -e '/precip ng-isolate-scope/s/^.*ng-scope ng-binding">//g' -e '/wxPrecipIconOnly/s/<\/span.*$//g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+sed -i -e '/temperature ng-isolate-scope/s/^.*data-ng-bind-template="//g' -e '/showTempUnit/s/" class=.*$//g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+sed -i -e '/data\.night\.getPhrase/s/^.*">//g' -e '/narrative ng-binding/s/">.*$//g' -e '/narrative ng-binding/s/^.*data-ng-bind-template="//g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+sed -i -e '/wx-wind ng-isolate-scope/s/" data-wx-wind.*$//g' -e '/wx-wind ng-isolate-scope/s/^.*data-ng-bind-template="//g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+sed -i -e '/Sunrise\|Sunset\|Moonrise\|Moonset/s/^.*">//g' -e 's/<\/span>.*$//g' -e '/getHumidity/s/" data-wx-percentage.*$//g' -e 's/^.*template="//g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+sed -i -e '/getUVIndex/s/" data-wx.*$//g' -e '/mph/s/  mph//g' -e '/km\/h/s/  km\/h//g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+
+td_tn=$(sed -n 1p $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp)
+
+if [[ $td_tn == Tonight ]]; then
+	sed -i '3s/$/\n\n\n\n\n\n\n/g' $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp
+fi
+
+for (( i=4; i<=200; i+=20 ))
+	do
+		wget -O $HOME/4_Conky_WeatherCom/4a/$i.svgz http://www.weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/$(sed -n ${i}p $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp)
+		convert -background none $HOME/4_Conky_WeatherCom/4a/$i.svgz $HOME/4_Conky_WeatherCom/4a/$i.png
+		j=$(($i+7))
+		wget -O $HOME/4_Conky_WeatherCom/4a/$j.svgz http://www.weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/$(sed -n ${j}p $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp)
+		convert -background none $HOME/4_Conky_WeatherCom/4a/$j.svgz $HOME/4_Conky_WeatherCom/4a/$j.png
+	done
+
+rm $HOME/4_Conky_WeatherCom/4a/*.svgz
+
+mv $HOME/4_Conky_WeatherCom/4a/raw_rendered_temp $HOME/4_Conky_WeatherCom/4a/raw_rendered

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#put your Today weather.com address here
+#address_td="http://www.weather.com/weather/today/l/RSXX0063:1:RS"
+#address_td="http://www.weather.com/weather/today/l/JAXX0085:1:JA"
+address_td="http://www.weather.com/weather/today/l/EIXX1329:1:EI"
+
+killall -9 phantomjs
+phantomjs --proxy-type=none $HOME/4_Conky_WeatherCom/4b/save_page.js $address_td > $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp
+
+sed -n '/<h3 class=\"weather-phrase\"/,/<\/h3>/p' $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp > $HOME/4_Conky_WeatherCom/4b/short_messages
+sed -i -e '/class=\"ng-binding\">/!d' $HOME/4_Conky_WeatherCom/4b/short_messages
+sed -i -e 's/^\s*//g' -e 's/^.*">//g' -e 's/<\/span>.*$//g' $HOME/4_Conky_WeatherCom/4b/short_messages
+
+sed -i '/timestamp-updated wx-dsxdate ng-scope ng-binding\|condition-icon ng-isolate-scope wx-weather-icon\|actual-temp ng-isolate-scope\|apparent-temp ng-scope ng-isolate-scope\|safeDisplay\" class=\"ng-binding\">\|wx-wind ng-isolate-scope ng-binding\|data-wx-percentage=\"obs.getHumidity()\" class=\|data-wx-pressure-text=\"obs.getBarometricText()\" class=\|data-wx-visibility=\"obs.getVisibility()\" class=\|data-wx-uv-index=\"obs.getUVIndex()\" class=\|data-wx-temperature=\"obs.getDewPoint()\" class=\|data.getDayOfWeek()\" class=\"ng-binding\">\|class=\"ng-isolate-scope wx-weather-icon\">\|temperature ng-isolate-scope\" data-wx-temperature\|<p class=\"precip ng-isolate-scope\"\|<span class=\"narrative ng-binding\"\|\"daypart().getHumidity()\" class=\|<!-- ngIf: data.astro.getMoonsetTimeLocal()\|<!-- ngIf: data.astro.getMoonriseTimeLocal()\|dsxDateOutput\" data-dsxdate=\"\" data-datetime=\"data.astro.getSunriseTimeLocal()\|dsxDateOutput\" data-dsxdate=\"\" data-datetime=\"data.astro.getSunsetTimeLocal()/!d' $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp
+
+sed -i -e 's/^\s*//g' -e 's/^.*wxicon\/svgz\///g' -e 's/\.svgz.*$/\.svgz/g' -e 's/^.*ng-scope ng-binding\">//g' $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp
+sed -i -e 's/^.*\"ng-binding\">//g' -e 's/^.*getWindSpeed()\">//g' -e 's/^.*ng-binding\">//g' $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp
+sed -i -e '/timestamp-updated\|narrative ng-binding\|Sunrise\|Sunset\|Moonrise\|Moonset/s/^.*">//g' $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp
+sed -i -e 's/<\/span>.*$//g' -e 's/<\/h2>//g' -e 's/mph\|km\/h//g' $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp
+
+wget -O $HOME/4_Conky_WeatherCom/4b/2.svgz http://www.weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/$(sed -n 2p $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp)
+convert -background none $HOME/4_Conky_WeatherCom/4b/2.svgz $HOME/4_Conky_WeatherCom/4b/2.png
+wget -O $HOME/4_Conky_WeatherCom/4b/14.svgz http://www.weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/$(sed -n 14p $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp)
+convert -background none $HOME/4_Conky_WeatherCom/4b/14.svgz $HOME/4_Conky_WeatherCom/4b/14.png
+wget -O $HOME/4_Conky_WeatherCom/4b/26.svgz http://www.weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/$(sed -n 26p $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp)
+convert -background none $HOME/4_Conky_WeatherCom/4b/26.svgz $HOME/4_Conky_WeatherCom/4b/26.png
+wget -O $HOME/4_Conky_WeatherCom/4b/38.svgz http://www.weather.com/sites/all/modules/custom/angularmods/app/shared/wxicon/svgz/$(sed -n 38p $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp)
+convert -background none $HOME/4_Conky_WeatherCom/4b/38.svgz $HOME/4_Conky_WeatherCom/4b/38.png
+
+rm $HOME/4_Conky_WeatherCom/4b/*.svgz
+
+mv $HOME/4_Conky_WeatherCom/4b/raw_rendered_temp $HOME/4_Conky_WeatherCom/4b/raw_rendered
