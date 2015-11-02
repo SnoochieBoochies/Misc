@@ -1,0 +1,10 @@
+alsi
+alsi.tar.gz
+compton
+compton.tar.gz
+i3blocks-git
+i3blocks-git.tar.gz
+i3-gaps-git
+i3-gaps-git.tar.gz
+ttf-font-awesome
+ttf-font-awesome.tar.gz
