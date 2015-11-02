@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Show battery percentage and status in i3bar.
+# Change the color with the percentage and display low battery notifications.
+
+HOST=$(hostname)
+
+if [[ "$HOST" == "acer" ]] || [[ "$HOST" == "debian" ]]; then
+        POWER=$(acpi -b)
+        if [[ "$POWER" == "" ]]; then
+                exit 1
+        fi
+        STATE=$(echo $POWER | cut -d : -f 2              \
+                            | cut -d , -f 1              \
+                            | tr '[:upper:]' '[:lower:]' \
+                            | sed 's/[[:space:]]//g')
+        PERCENTAGE=$(echo $POWER | grep -o '[^ ]*%' | grep -o '[0-9]*')
+elif [[ "$HOST" == "localhost" ]]; then
+        POWER=$(upower -i /org/freedesktop/UPower/devices/battery_sbs_104_000b)
+        STATE=$(echo $POWER | sed -n "12p"                \
+                            | awk -F'state:' '{print $2}' \
+                            | sed 's/[[:space:]]//g')
+        PERCENTAGE=$(echo $POWER | sed -n "20p"                     \
+                                 | awk -F'percentage:' '{print $2}' \
+                                 | tr -d -c 0-9)
+else
+        exit 1
+fi
+
+if [[ "$STATE" == "discharging" ]]; then
+        if [[ "$HOST" == "localhost" ]]; then
+                OUTPUT=" "
+        else
+                OUTPUT=""
+        fi
+elif [[ "$STATE" == "charging" ]]; then
+        OUTPUT=" "
+elif [[ "$STATE" == "full" ]]; then
+        OUTPUT=" "
+else
+        OUTPUT=""
+fi
+
+# Add the percentage battery remaining:
+OUTPUT="$OUTPUT $PERCENTAGE%"
+echo $OUTPUT
+echo $OUTPUT
+
+# Change color at different PERCENTAGEage levels when discharging:
+if [[ "$STATE" == "discharging" ]]; then
+        if [[ "$PERCENTAGE" -lt "20" ]]; then
+                echo "#F2777A"
+                notify-send -t 10000 -i ~/.i3/low-battery.png 'Ceallraí Íseal'
+        elif [[ "$PERCENTAGE" -lt "40" ]]; then
+                echo "#F99157"
+        elif [[ "$PERCENTAGE" -lt "60" ]]; then
+                echo "#FFCC66"
+        elif [[ "$PERCENTAGE" -lt "85" ]]; then
+                echo "#99CC99"
+        fi
+fi
