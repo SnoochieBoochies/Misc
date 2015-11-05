@@ -1,5 +1,5 @@
-#!/usr/bin/python
-
+# -*- coding: utf-8 -*-
+#!/usr/bin/env python2
 # For Python 2.7
 from __future__ import print_function
 
@@ -13,8 +13,17 @@ import time
 
 from bs4 import BeautifulSoup
 
+directionUTF = [ u'\uF058', u'\uF057', u'\uF04D', u'\uF088', u'\uF044', u'\uF043', u'\uF048', u'\uF057']
+directions = []
+for icon in directionUTF:
+	directions.append(icon.encode('utf-8'))
+northIcon = u'\uF058'
+northStr = northIcon.encode('utf-8')
+eastIcon = u'\uF04D'
+eastStr = eastIcon.encode('utf-8')
+
 def fuzzy_direction(degrees):
-    directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
+    #directions = [u'\uF058', 'NE',  , 'SE', 'S', 'SW', 'W', 'NW']
     degrees = round(float(degrees) / 45)
     index = int(degrees) % 8
     return directions[index]
