@@ -2,9 +2,15 @@ alsi
 alsi.tar.gz
 compton
 compton.tar.gz
-i3blocks-git
-i3blocks-git.tar.gz
 i3-gaps-git
 i3-gaps-git.tar.gz
+i3blocks-git
+i3blocks-git.tar.gz
+python-xmltodict
+python-xmltodict.tar.gz
 ttf-font-awesome
 ttf-font-awesome.tar.gz
+ttf-weather-icons
+ttf-weather-icons.tar.gz
+wego-git
+wego-git.tar.gz
