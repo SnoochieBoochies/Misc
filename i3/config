@@ -160,11 +160,11 @@ client.unfocused        #2d2d2d #2d2d2d #cccccc #2d2d2d
 # finds out, if available)
 bar {
         #status_command i3status --config ~/.config/i3status/config
-	status_command i3blocks -c ~/.config/i3/i3blocks_config/i3blocks.conf | python2 ~/.config/i3/i3blocks_config/i3-weather.py --wrap-i3-status --unit c --format '{text}, {temp}°{unit_temperature}, {wind_direction_fuzzy}, {wind_speed} km/h' 560743
+	status_command i3blocks -c ~/.config/i3/i3blocks_config/i3blocks.conf | python2 ~/.config/i3/i3blocks_config/i3-weather.py --wrap-i3-status --unit c --format '{text}, {temp}°{unit_temperature} Direction: {wind_direction_fuzzy} & {wind_speed} km/h' 560743
         tray_output primary
 	#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-	#font pango:FontAwesome Weather Icons, Icons 9
-	font pango:Weather Icons, Icons 9
+	font pango:Weather Icons, FontAwesome, Icons 9
+	#font pango:Weather Icons, Icons 9
 	workspace_buttons yes
 	colors {
 		background #3f3f3f
@@ -185,7 +185,7 @@ bindsym $mod+Tab exec rofi -i3 -now -font "Inconsolata-10" -fg "#9f9f9f" -bg "#2
 
 
 #lock screen
-bindsym $mod+Ctrl+l exec ~/.config/i3/i3blocks_config/blurred-lock
+bindsym $mod+Ctrl+l exec ~/.config/i3/i3blocks_config/blur-lock.sh
 bindsym XF86AudioRaiseVolume exec amixer sset Master 20%+ & exec ~/.config/i3/i3blocks_config/vol-notify
 bindsym XF86AudioLowerVolume exec amixer sset Master 20%- & exec ~/.config/i3/i3blocks_config/vol-notify
 bindsym XF86AudioMute exec amixer sset Master toggle & exec ~/.config/i3/i3blocks_config/vol-notify
