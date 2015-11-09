@@ -13,7 +13,7 @@ import time
 
 from bs4 import BeautifulSoup
 
-directionUTF = [ u'\uF058', u'\uF057', u'\uF04D', u'\uF088', u'\uF044', u'\uF043', u'\uF048', u'\uF057']
+directionUTF = [ u'\uF044', u'\uF043', u'\uF048', u'\uF057', u'\uF058', u'\uF057', u'\uF04D', u'\uF088']
 directions = []
 for icon in directionUTF:
 	directions.append(icon.encode('utf-8'))
